@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Find Flames Takeaway in Khayelitsha, Cape Town. Get directions, opening hours, and order on WhatsApp." />
+    <title>Find Us | Flames Takeaway</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="flames.css" />
+
+    <style>
+
+        /* Contact Page Specific */
+
+        .contact-section {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Info Cards */
+        .contact-info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .info-card {
+            background: var(--orange-pale);
+            border-radius: 14px;
+            padding: 22px;
+            border: 1px solid var(--orange-border);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover { transform: translateY(-2px); }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange-mid));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            font-size: 0.95rem;
+            color: var(--orange-dark);
+            margin-bottom: 5px;
+        }
+
+        .info-content p {
+            font-size: 0.88rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .info-content a {
+            color: var(--orange-mid);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 5px;
+        }
+
+        .hours-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 5px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #64748b;
+            gap: 20px;
+        }
+
+        .hours-row .time {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        /* Map Box */
+        .map-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .map-box {
+            background: var(--orange-pale);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--orange-border);
+            flex: 1;
+        }
+
+        .map-placeholder {
+            height: 320px;
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange-mid));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .map-placeholder i { font-size: 3rem; }
+
+        .map-placeholder h3 {
+            font-size: 1.1rem;
+        }
+
+        .map-placeholder p {
+            font-size: 0.88rem;
+            color: #fed7aa;
+            text-align: center;
+            max-width: 220px;
+        }
+
+        .map-footer {
+            padding: 16px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .map-footer .btn {
+            flex: 1;
+            justify-content: center;
+            font-size: 0.88rem;
+        }
+
+        /* Order Form */
+        .order-form-section {
+            padding: 80px 0;
+            background: var(--orange-pale);
+        }
+
+        .order-form-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--orange-border);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .order-form-card h3 {
+            font-size: 1.3rem;
+            color: var(--orange-dark);
+            margin-bottom: 8px;
+        }
+
+        .order-form-card p {
+            color: #64748b;
+            margin-bottom: 28px;
+        }
+
+        .order-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .input-group label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--orange-dark);
+        }
+
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+            padding: 11px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--orange-border);
+            background: #ffffff;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            border-color: var(--orange-mid);
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .order-form .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Quick Order Cards */
+        .quick-order {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .quick-order-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .quick-card {
+            background: var(--orange-pale);
+            border-radius: 14px;
+            padding: 25px;
+            border: 1px solid var(--orange-border);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .quick-card:hover { transform: translateY(-3px); }
+
+        .quick-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange-mid));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin: 0 auto 15px;
+        }
+
+        .quick-card h3 {
+            font-size: 1rem;
+            color: var(--orange-dark);
+            margin-bottom: 8px;
+        }
+
+        .quick-card p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 18px;
+        }
+
+        .quick-card .btn {
+            width: 100%;
+            justify-content: center;
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 900px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-order-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .input-row {
+                grid-template-columns: 1fr;
+            }
+
+            .order-form-card {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+       class="float-whatsapp"
+       target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div class="portfolio-banner">
+        <p>
+            Demo site by BusinessDev SA.
+            <a href="../../index.html">← Back to Portfolio</a>
+            <span class="premium-badge-banner">
+                <i class="fa-solid fa-crown"></i>
+                Premium Package — R6,000
+            </span>
+        </p>
+    </div>
+
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div style="display:flex; gap:20px; flex-wrap:wrap;">
+                <div class="top-bar-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>078 000 0000</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Mon–Sun: 10am – 10pm</span>
+                    <span class="open-badge">Open Now</span>
+                </div>
+            </div>
+            <div class="top-bar-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Khayelitsha, Cape Town</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="name">Flames Takeaway</span>
+                    <span class="tagline">Hot food. Fast service.</span>
+                </div>
+            </a>
+            <div class="nav-links-row">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Full Menu</a>
+                <a href="about.html" class="nav-link">Our Story</a>
+                <a href="contact.html" class="nav-link active">Find Us</a>
+            </div>
+            <div class="nav-cta-group">
+                <a href="tel:0780000000" class="btn btn-primary">
+                    <i class="fa-solid fa-phone"></i>
+                    Call to Order
+                </a>
+                <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+                   class="btn btn-whatsapp"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Order on WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="container page-hero-inner">
+            <div>
+                <div class="breadcrumb" style="margin-bottom:12px;">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Find Us</span>
+                </div>
+                <h1>Find <span>Flames Takeaway</span></h1>
+                <p>We are easy to find. Come hungry and leave happy.</p>
+            </div>
+            <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+               class="btn btn-whatsapp"
+               target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                Order Ahead on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Contact Info + Map -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- Info -->
+                <div class="contact-info-grid">
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Our Address</h4>
+                            <p>123 Mew Way, Khayelitsha<br />Cape Town, Western Cape, 7784</p>
+                            <a href="#map">
+                                <i class="fa-solid fa-map"></i>
+                                View on Map
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Call or WhatsApp</h4>
+                            <p>Call us to order or ask any questions</p>
+                            <a href="tel:0780000000">
+                                <i class="fa-solid fa-phone"></i>
+                                078 000 0000
+                            </a>
+                            <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+                               target="_blank"
+                               style="margin-top:5px;">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                Order on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Opening Hours</h4>
+                            <div class="hours-list">
+                                <div class="hours-row">
+                                    <span>Monday – Thursday</span>
+                                    <span class="time">10am – 9pm</span>
+                                </div>
+                                <div class="hours-row">
+                                    <span>Friday</span>
+                                    <span class="time">10am – 11pm</span>
+                                </div>
+                                <div class="hours-row">
+                                    <span>Saturday</span>
+                                    <span class="time">10am – 11pm</span>
+                                </div>
+                                <div class="hours-row">
+                                    <span>Sunday</span>
+                                    <span class="time">11am – 8pm</span>
+                                </div>
+                                <div class="hours-row">
+                                    <span>Public Holidays</span>
+                                    <span class="time">11am – 8pm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Order Ahead — Skip the Queue</h4>
+                            <p>
+                                WhatsApp your order before you leave home.
+                                Your food will be fresh and ready when you arrive.
+                                No waiting, no standing in line.
+                            </p>
+                            <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                Order Ahead Now
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Map -->
+                <div class="map-container" id="map">
+                    <div class="map-box">
+                        <div class="map-placeholder">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <h3>123 Mew Way, Khayelitsha</h3>
+                            <p>Google Maps would be embedded here showing our exact location</p>
+                        </div>
+                        <div class="map-footer">
+                            <a href="https://maps.google.com"
+                               class="btn btn-primary"
+                               target="_blank">
+                                <i class="fa-solid fa-map"></i>
+                                Get Directions
+                            </a>
+                            <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+                               class="btn btn-whatsapp"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                Order Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="order-form-section">
+        <div class="container">
+            <div class="section-label">Place an Order</div>
+            <h2 class="section-title">Order <span>Ahead Online</span></h2>
+            <p class="section-sub">
+                Fill in what you want and we will send you a WhatsApp confirmation
+                with your estimated ready time.
+            </p>
+            <div class="order-form-card">
+                <h3>
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    Place Your Order
+                </h3>
+                <p>Tell us what you want and when you're coming to collect.</p>
+                <form class="order-form" onsubmit="handleOrder(event)">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Your Name</label>
+                            <input type="text" placeholder="e.g. Sipho Mokoena" required />
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="e.g. 078 123 4567" required />
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Collection Time</label>
+                        <select required>
+                            <option value="" disabled selected>When are you collecting?</option>
+                            <option>In 20 minutes</option>
+                            <option>In 30 minutes</option>
+                            <option>In 45 minutes</option>
+                            <option>In 1 hour</option>
+                            <option>Later today</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Your Order</label>
+                        <textarea placeholder="e.g. 1x Flames Special Burger, 1x Mutton Bunny full, 2x large chips, 2x Coke" required></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label>Any Special Requests?</label>
+                        <input type="text" placeholder="e.g. extra sauce, no onions, etc." />
+                    </div>
+                    <button type="submit" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Send Order via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Cards -->
+    <section class="quick-order">
+        <div class="container">
+            <div class="section-label">Get In Touch</div>
+            <h2 class="section-title">Three Ways to <span>Reach Us</span></h2>
+            <p class="section-sub">
+                Whatever works best for you.
+            </p>
+            <div class="quick-order-grid">
+                <div class="quick-card">
+                    <div class="quick-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Order</h3>
+                    <p>Send your order on WhatsApp. We reply fast and confirm your ready time.</p>
+                    <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+                       class="btn btn-whatsapp"
+                       target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Open WhatsApp
+                    </a>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3>Call to Order</h3>
+                    <p>Prefer to speak to us? Call during opening hours and we will take your order.</p>
+                    <a href="tel:0780000000" class="btn btn-primary">
+                        <i class="fa-solid fa-phone"></i>
+                        Call 078 000 0000
+                    </a>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-icon">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h3>Walk In</h3>
+                    <p>Come straight to us at 123 Mew Way, Khayelitsha. We are open 7 days a week.</p>
+                    <a href="https://maps.google.com"
+                       class="btn btn-dark"
+                       target="_blank">
+                        <i class="fa-solid fa-map"></i>
+                        Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                        </div>
+                        <span class="footer-logo-name">Flames Takeaway</span>
+                    </a>
+                    <p>Hot food, real flavour, served fast. Open 7 days a week.</p>
+                    <div class="footer-contact-list">
+                        <a href="tel:0780000000">
+                            <i class="fa-solid fa-phone"></i> 078 000 0000
+                        </a>
+                        <a href="https://wa.me/27780000000" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                        <a href="#">
+                            <i class="fa-solid fa-location-dot"></i>
+                            123 Mew Way, Khayelitsha
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Full Menu</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> Our Story</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Find Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Burgers</a></li>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Bunny Chow</a></li>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Platters</a></li>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Gatsby</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <div class="footer-hours">
+                        <div class="footer-hour-row">
+                            <span>Mon – Thu</span>
+                            <span>10am – 9pm</span>
+                        </div>
+                        <div class="footer-hour-row">
+                            <span>Fri – Sat</span>
+                            <span>10am – 11pm</span>
+                        </div>
+                        <div class="footer-hour-row">
+                            <span>Sunday</span>
+                            <span>11am – 8pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Flames Takeaway — Khayelitsha, Cape Town</p>
+                <p>Demo site built by <a href="../../index.html">BusinessDev SA</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleOrder(e) {
+            e.preventDefault();
+            const inputs  = e.target.querySelectorAll('input, select, textarea');
+            const name    = inputs[0].value;
+            const phone   = inputs[1].value;
+            const time    = inputs[2].value;
+            const order   = inputs[3].value;
+            const special = inputs[4].value;
+            const msg = encodeURIComponent(
+                `Hi Flames! I'd like to place an order.\n\nName: ${name}\nPhone: ${phone}\nCollection: ${time}\n\nOrder:\n${order}\n\nSpecial requests: ${special || 'None'}`
+            );
+            window.open(`https://wa.me/27780000000?text=${msg}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>

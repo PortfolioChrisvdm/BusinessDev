@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The story behind Flames Takeaway — Khayelitsha's favourite takeaway since 2015." />
+    <title>Our Story | Flames Takeaway</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="flames.css" />
+
+    <style>
+
+        /* About Page Specific */
+
+        .about-section {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 70px;
+        }
+
+        .about-image-side {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .about-img-box {
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 8px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .about-img-box i { font-size: 2rem; opacity: 0.9; }
+
+        .about-img-box:nth-child(1) {
+            height: 200px;
+            background: linear-gradient(135deg, #7c2d12, #ea580c);
+            border-radius: 14px;
+        }
+
+        .about-img-box:nth-child(2) {
+            height: 200px;
+            background: linear-gradient(135deg, #431407, #c2410c);
+            border-radius: 14px;
+            margin-top: 25px;
+        }
+
+        .about-img-box:nth-child(3) {
+            height: 170px;
+            background: linear-gradient(135deg, #9a3412, #f97316);
+            border-radius: 14px;
+            margin-top: -25px;
+        }
+
+        .about-img-box:nth-child(4) {
+            height: 170px;
+            background: linear-gradient(135deg, #7c2d12, #fb923c);
+            border-radius: 14px;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 span { color: var(--orange-mid); }
+
+        .about-text p {
+            color: #475569;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 70px;
+        }
+
+        .stat-card {
+            background: var(--orange-pale);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+            border: 1px solid var(--orange-border);
+        }
+
+        .stat-card .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--orange-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Values */
+        .values-section {
+            padding: 80px 0;
+            background: var(--orange-pale);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .value-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 30px;
+            border: 1px solid var(--orange-border);
+            text-align: center;
+        }
+
+        .value-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange-mid));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin: 0 auto 18px;
+        }
+
+        .value-card h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: var(--orange-dark);
+        }
+
+        .value-card p {
+            font-size: 0.88rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Team */
+        .team-section {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .team-card {
+            background: var(--orange-pale);
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--orange-border);
+            text-align: center;
+        }
+
+        .team-avatar {
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+        }
+
+        .team-card:nth-child(1) .team-avatar {
+            background: linear-gradient(135deg, #7c2d12, #ea580c);
+        }
+
+        .team-card:nth-child(2) .team-avatar {
+            background: linear-gradient(135deg, #431407, #c2410c);
+        }
+
+        .team-card:nth-child(3) .team-avatar {
+            background: linear-gradient(135deg, #9a3412, #f97316);
+        }
+
+        .team-info {
+            padding: 20px;
+        }
+
+        .team-info h3 {
+            font-size: 1rem;
+            color: var(--orange-dark);
+            margin-bottom: 4px;
+        }
+
+        .team-info p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* Reviews */
+        .reviews {
+            padding: 80px 0;
+            background: var(--orange-pale);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        /* CTA */
+        .about-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange-mid));
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .about-cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .about-cta p {
+            color: #fed7aa;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 900px) {
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .values-grid,
+            .team-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+       class="float-whatsapp"
+       target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div class="portfolio-banner">
+        <p>
+            Demo site by BusinessDev SA.
+            <a href="../../index.html">← Back to Portfolio</a>
+            <span class="premium-badge-banner">
+                <i class="fa-solid fa-crown"></i>
+                Premium Package — R6,000
+            </span>
+        </p>
+    </div>
+
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div style="display:flex; gap:20px; flex-wrap:wrap;">
+                <div class="top-bar-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>078 000 0000</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Mon–Sun: 10am – 10pm</span>
+                    <span class="open-badge">Open Now</span>
+                </div>
+            </div>
+            <div class="top-bar-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Khayelitsha, Cape Town</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="name">Flames Takeaway</span>
+                    <span class="tagline">Hot food. Fast service.</span>
+                </div>
+            </a>
+            <div class="nav-links-row">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Full Menu</a>
+                <a href="about.html" class="nav-link active">Our Story</a>
+                <a href="contact.html" class="nav-link">Find Us</a>
+            </div>
+            <div class="nav-cta-group">
+                <a href="tel:0780000000" class="btn btn-primary">
+                    <i class="fa-solid fa-phone"></i>
+                    Call to Order
+                </a>
+                <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+                   class="btn btn-whatsapp"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Order on WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <div class="container page-hero-inner">
+            <div>
+                <div class="breadcrumb" style="margin-bottom:12px;">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Our Story</span>
+                </div>
+                <h1>Our <span>Story</span></h1>
+                <p>From a small dream to Khayelitsha's favourite takeaway.</p>
+            </div>
+            <a href="menu.html" class="btn btn-outline">
+                <i class="fa-solid fa-utensils"></i>
+                View Our Menu
+            </a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-side">
+                    <div class="about-img-box">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                        <span>Our kitchen</span>
+                    </div>
+                    <div class="about-img-box">
+                        <i class="fa-solid fa-burger"></i>
+                        <span>Fresh food daily</span>
+                    </div>
+                    <div class="about-img-box">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Our community</span>
+                    </div>
+                    <div class="about-img-box">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Happy customers</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Started With a <span>Dream and a Pan</span></h2>
+                    <p>
+                        Flames Takeaway started in 2015 when Themba Mokoena decided he was tired
+                        of seeing his community eat bad food at high prices.
+                        He set up a small stall outside his home in Khayelitsha with one pan,
+                        one gas bottle, and a dream to make the best food in the area.
+                    </p>
+                    <p>
+                        Word spread fast. Neighbours told neighbours. Weekend queues started
+                        forming. Within a year, Themba had saved enough to open a proper
+                        takeaway shop on Mew Way.
+                    </p>
+                    <p>
+                        Ten years later, Flames Takeaway is one of the most loved food spots
+                        in Khayelitsha. We serve hundreds of customers every week — from
+                        families picking up dinner to office workers ordering on WhatsApp
+                        during their lunch break.
+                    </p>
+                    <p>
+                        What has never changed is our commitment to fresh food, honest prices,
+                        and treating every customer like family.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <span class="stat-number">2015</span>
+                    <span class="stat-label">Year We Started</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Serving Khayelitsha</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Customers Per Week</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">4.9★</span>
+                    <span class="stat-label">Average Customer Rating</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-label">What We Stand For</div>
+            <h2 class="section-title">Our <span>Values</span></h2>
+            <p class="section-sub">These are the things that have guided us from day one.</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                    </div>
+                    <h3>Freshness First</h3>
+                    <p>
+                        We prepare our food fresh every single day.
+                        No frozen shortcuts. No day-old ingredients.
+                        If it's not fresh, it doesn't go out.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3>Community First</h3>
+                    <p>
+                        We are part of this community. We employ locally,
+                        we source locally where we can, and we give back
+                        when we can. Khayelitsha built us and we are proud of it.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3>Honest Pricing</h3>
+                    <p>
+                        We believe everyone deserves good food at a fair price.
+                        We have never chased big profits at the expense of our
+                        community. Honest prices, always.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-label">The People</div>
+            <h2 class="section-title">Meet the <span>Flames Team</span></h2>
+            <p class="section-sub">
+                The people behind the food.
+                Every one of us is proud to serve you.
+            </p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">👨🏾‍🍳</div>
+                    <div class="team-info">
+                        <h3>Themba Mokoena</h3>
+                        <p>Founder & Head Chef</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">👩🏾‍🍳</div>
+                    <div class="team-info">
+                        <h3>Nomvula Mokoena</h3>
+                        <p>Co-founder & Kitchen Manager</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">👨🏾‍💼</div>
+                    <div class="team-info">
+                        <h3>Siyanda Dlamini</h3>
+                        <p>Front of House & Orders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-label">What People Say</div>
+            <h2 class="section-title">Our Customers <span>Love Us</span></h2>
+            <p class="section-sub">Ten years of happy customers speak for themselves.</p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "I have been coming to Flames since 2016. The food quality
+                        has never dropped once. These people take real pride in what they do."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <span class="name">Lungelo P.</span>
+                            <span class="detail">Customer since 2016</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Themba and his team are amazing people. You can taste the love
+                        in the food. The bunny chow is the best in Cape Town, full stop."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">K</div>
+                        <div class="author-info">
+                            <span class="name">Khanya N.</span>
+                            <span class="detail">Regular Customer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "This is a true community business. Fair prices, great food,
+                        and they always treat you well. Proud to support Flames."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">Z</div>
+                        <div class="author-info">
+                            <span class="name">Zinhle M.</span>
+                            <span class="detail">Regular Customer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+        <div class="container">
+            <h2>Come Taste the Difference</h2>
+            <p>
+                Now you know our story. Come experience the food that
+                Khayelitsha has been talking about for 10 years.
+            </p>
+            <div class="about-cta-buttons">
+                <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+                   class="btn btn-whatsapp"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Order on WhatsApp
+                </a>
+                <a href="menu.html" class="btn btn-outline">
+                    <i class="fa-solid fa-utensils"></i>
+                    View Full Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                        </div>
+                        <span class="footer-logo-name">Flames Takeaway</span>
+                    </a>
+                    <p>Hot food, real flavour, served fast. Open 7 days a week.</p>
+                    <div class="footer-contact-list">
+                        <a href="tel:0780000000">
+                            <i class="fa-solid fa-phone"></i> 078 000 0000
+                        </a>
+                        <a href="https://wa.me/27780000000" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Full Menu</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> Our Story</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Find Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Burgers</a></li>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Bunny Chow</a></li>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Platters</a></li>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Gatsby</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <div class="footer-hours">
+                        <div class="footer-hour-row">
+                            <span>Mon – Thu</span>
+                            <span>10am – 9pm</span>
+                        </div>
+                        <div class="footer-hour-row">
+                            <span>Fri – Sat</span>
+                            <span>10am – 11pm</span>
+                        </div>
+                        <div class="footer-hour-row">
+                            <span>Sunday</span>
+                            <span>11am – 8pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Flames Takeaway — Khayelitsha, Cape Town</p>
+                <p>Demo site built by <a href="../../index.html">BusinessDev SA</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

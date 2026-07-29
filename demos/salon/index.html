@@ -6,12 +6,9 @@
     <meta name="description" content="Nandi's Hair Studio — professional braids, relaxers, treatments and styling in Johannesburg South. Book your appointment on WhatsApp today." />
     <title>Nandi's Hair Studio | Johannesburg South</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
@@ -26,9 +23,7 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -48,20 +43,14 @@
             font-weight: 700;
         }
 
-        a {
-            text-decoration: none;
-        }
-
-        /* =========================================
-           COLOUR VARIABLES
-        ========================================= */
+        a { text-decoration: none; }
 
         :root {
-            --pink-dark:    #831843;
-            --pink-mid:     #be185d;
-            --pink-light:   #ec4899;
-            --pink-pale:    #fdf2f8;
-            --pink-border:  #fbcfe8;
+            --pink-dark:   #831843;
+            --pink-mid:    #be185d;
+            --pink-light:  #ec4899;
+            --pink-pale:   #fdf2f8;
+            --pink-border: #fbcfe8;
         }
 
         /* =========================================
@@ -124,11 +113,38 @@
         }
 
         /* =========================================
+           FLOATING WHATSAPP BUTTON
+        ========================================= */
+
+        .float-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 58px;
+            height: 58px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: #ffffff;
+            box-shadow: 0 6px 25px rgba(37,211,102,0.5);
+            z-index: 9999;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* =========================================
            PORTFOLIO BANNER
         ========================================= */
 
         .portfolio-banner {
-            background: #be185d;
+            background: var(--pink-mid);
             padding: 12px 0;
             text-align: center;
         }
@@ -142,6 +158,20 @@
             color: #fbcfe8;
             font-weight: 600;
             text-decoration: underline;
+        }
+
+        .standard-badge-banner {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.2);
+            color: #ffffff;
+            padding: 3px 12px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-left: 10px;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         /* =========================================
@@ -170,8 +200,21 @@
             font-size: 0.85rem;
         }
 
-        .top-bar-item i {
-            color: var(--pink-light);
+        .top-bar-item i { color: var(--pink-light); }
+
+        .top-bar-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .top-bar-social a {
+            color: var(--pink-mid);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .top-bar-social a:hover {
+            color: var(--pink-dark);
         }
 
         /* =========================================
@@ -180,11 +223,11 @@
 
         .navbar {
             background: #ffffff;
-            padding: 18px 0;
+            padding: 16px 0;
             border-bottom: 1px solid #f9a8d4;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             box-shadow: 0 2px 10px rgba(131,24,67,0.06);
         }
 
@@ -215,7 +258,7 @@
         .logo-text .name {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--pink-dark);
             display: block;
             line-height: 1.1;
@@ -223,7 +266,24 @@
 
         .logo-text .tagline {
             font-size: 0.75rem;
-            color: #be185d;
+            color: var(--pink-mid);
+        }
+
+        .nav-links-row {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .nav-link {
+            color: #475569;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--pink-dark);
         }
 
         .nav-cta-group {
@@ -237,7 +297,7 @@
 
         .hero {
             background: linear-gradient(135deg, var(--pink-dark) 0%, var(--pink-light) 100%);
-            padding: 90px 0;
+            padding: 80px 0;
             color: #ffffff;
             position: relative;
             overflow: hidden;
@@ -246,10 +306,10 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 300px;
-            height: 300px;
+            top: -80px;
+            right: -80px;
+            width: 350px;
+            height: 350px;
             background: rgba(255,255,255,0.05);
             border-radius: 50%;
         }
@@ -257,10 +317,10 @@
         .hero::after {
             content: '';
             position: absolute;
-            bottom: -80px;
-            left: -80px;
-            width: 400px;
-            height: 400px;
+            bottom: -100px;
+            left: -60px;
+            width: 300px;
+            height: 300px;
             background: rgba(255,255,255,0.04);
             border-radius: 50%;
         }
@@ -273,9 +333,7 @@
             z-index: 1;
         }
 
-        .hero-text {
-            flex: 1;
-        }
+        .hero-text { flex: 1; }
 
         .hero-badge {
             display: inline-flex;
@@ -298,9 +356,7 @@
             margin-bottom: 18px;
         }
 
-        .hero h1 span {
-            color: #fbcfe8;
-        }
+        .hero h1 span { color: #fbcfe8; }
 
         .hero-sub {
             font-size: 1.05rem;
@@ -319,7 +375,7 @@
 
         .hero-trust {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
@@ -327,66 +383,85 @@
             display: flex;
             align-items: center;
             gap: 7px;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: #fbcfe8;
         }
 
-        /* Hero Gallery Side */
-        .hero-gallery-side {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            max-width: 380px;
+        /* Hero Booking Card */
+        .hero-booking-card {
+            flex: 0 0 320px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 18px;
+            padding: 28px;
         }
 
-        .gallery-placeholder {
-            border-radius: 12px;
+        .booking-card-title {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
             gap: 8px;
-            color: rgba(255,255,255,0.7);
+        }
+
+        .booking-card-title i { color: #fbcfe8; }
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
             font-size: 0.78rem;
-            text-align: center;
-            padding: 10px;
+            color: #fbcfe8;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 10px 14px;
+            border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.12);
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border 0.3s;
         }
 
-        .gallery-placeholder i {
-            font-size: 1.6rem;
-            opacity: 0.8;
+        .form-group input::placeholder {
+            color: rgba(255,255,255,0.5);
         }
 
-        .gallery-placeholder:nth-child(1) {
-            height: 140px;
-            background: rgba(255,255,255,0.1);
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: rgba(255,255,255,0.5);
         }
 
-        .gallery-placeholder:nth-child(2) {
-            height: 140px;
-            background: rgba(255,255,255,0.07);
+        .form-group select option {
+            background: var(--pink-dark);
+            color: #ffffff;
         }
 
-        .gallery-placeholder:nth-child(3) {
-            height: 110px;
-            background: rgba(255,255,255,0.07);
-        }
-
-        .gallery-placeholder:nth-child(4) {
-            height: 110px;
-            background: rgba(255,255,255,0.1);
+        .booking-form .btn {
+            width: 100%;
+            justify-content: center;
+            margin-top: 5px;
         }
 
         /* =========================================
-           SERVICES SECTION
+           SECTION BASICS
         ========================================= */
-
-        .services {
-            padding: 80px 0;
-            background: #ffffff;
-        }
 
         .section-label {
             font-size: 0.82rem;
@@ -404,9 +479,7 @@
             margin-bottom: 12px;
         }
 
-        .section-title span {
-            color: var(--pink-mid);
-        }
+        .section-title span { color: var(--pink-mid); }
 
         .section-sub {
             text-align: center;
@@ -415,10 +488,20 @@
             margin: 0 auto 50px;
         }
 
+        /* =========================================
+           SERVICES SECTION
+        ========================================= */
+
+        .services {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 22px;
+            margin-bottom: 35px;
         }
 
         .service-card {
@@ -427,8 +510,6 @@
             padding: 28px;
             border: 1px solid var(--pink-border);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
         .service-card:hover {
@@ -467,6 +548,10 @@
             font-size: 0.9rem;
         }
 
+        .services-cta {
+            text-align: center;
+        }
+
         /* =========================================
            GALLERY SECTION
         ========================================= */
@@ -476,16 +561,49 @@
             background: var(--pink-pale);
         }
 
+        .gallery-filter {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid var(--pink-border);
+            background: #ffffff;
+            color: var(--pink-dark);
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--pink-mid);
+            color: #ffffff;
+            border-color: var(--pink-mid);
+        }
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .gallery-item {
             border-radius: 12px;
             overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item-inner {
+            height: 200px;
             background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
             display: flex;
             align-items: center;
@@ -496,7 +614,39 @@
             font-size: 0.8rem;
             text-align: center;
             padding: 15px;
-            border: 1px solid var(--pink-border);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:nth-child(2) .gallery-item-inner {
+            background: linear-gradient(135deg, #6d1639, #be185d);
+        }
+
+        .gallery-item:nth-child(3) .gallery-item-inner {
+            background: linear-gradient(135deg, #9d174d, #ec4899);
+        }
+
+        .gallery-item:nth-child(4) .gallery-item-inner {
+            background: linear-gradient(135deg, #831843, #db2777);
+        }
+
+        .gallery-item:nth-child(5) .gallery-item-inner {
+            background: linear-gradient(135deg, #500724, #be185d);
+        }
+
+        .gallery-item:nth-child(6) .gallery-item-inner {
+            background: linear-gradient(135deg, #701a75, #ec4899);
+        }
+
+        .gallery-item:nth-child(7) .gallery-item-inner {
+            background: linear-gradient(135deg, #831843, #f472b6);
+        }
+
+        .gallery-item:nth-child(8) .gallery-item-inner {
+            background: linear-gradient(135deg, #9d174d, #db2777);
+        }
+
+        .gallery-item:hover .gallery-item-inner {
+            transform: scale(1.04);
         }
 
         .gallery-item i {
@@ -504,10 +654,25 @@
             opacity: 0.9;
         }
 
-        .gallery-item:nth-child(1) { height: 200px; }
-        .gallery-item:nth-child(2) { height: 200px; background: linear-gradient(135deg, #6d1639, #be185d); }
-        .gallery-item:nth-child(3) { height: 200px; background: linear-gradient(135deg, #9d174d, #ec4899); }
-        .gallery-item:nth-child(4) { height: 200px; background: linear-gradient(135deg, #831843, #db2777); }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(131,24,67,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
 
         .gallery-note {
             text-align: center;
@@ -528,6 +693,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 22px;
+            margin-bottom: 30px;
         }
 
         .review-card {
@@ -535,6 +701,11 @@
             border-radius: 14px;
             padding: 28px;
             border: 1px solid var(--pink-border);
+            transition: transform 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-3px);
         }
 
         .review-stars {
@@ -585,6 +756,39 @@
             color: #94a3b8;
         }
 
+        .reviews-summary {
+            background: var(--pink-pale);
+            border-radius: 14px;
+            padding: 25px;
+            border: 1px solid var(--pink-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .summary-item .big-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--pink-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: block;
+            line-height: 1;
+        }
+
+        .summary-item .big-stars {
+            color: #f59e0b;
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+
+        .summary-item p {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
         /* =========================================
            PRICING SECTION
         ========================================= */
@@ -598,6 +802,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 22px;
+            margin-bottom: 30px;
         }
 
         .price-card {
@@ -605,12 +810,20 @@
             border-radius: 14px;
             padding: 28px;
             border: 1px solid var(--pink-border);
+            transition: transform 0.3s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-3px);
         }
 
         .price-card h3 {
             font-size: 1.1rem;
             color: var(--pink-dark);
             margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .price-card .price-range {
@@ -626,7 +839,7 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 0;
         }
 
         .price-list li {
@@ -635,77 +848,240 @@
             align-items: center;
             font-size: 0.88rem;
             color: #475569;
-            padding-bottom: 8px;
+            padding: 10px 0;
             border-bottom: 1px solid var(--pink-border);
         }
 
-        .price-list li:last-child {
-            border-bottom: none;
-        }
+        .price-list li:last-child { border-bottom: none; }
 
         .price-list li span:last-child {
             font-weight: 700;
             color: var(--pink-dark);
         }
 
+        .pricing-cta {
+            text-align: center;
+        }
+
         /* =========================================
-           BOOKING SECTION
+           CONTACT SECTION
         ========================================= */
 
-        .booking {
+        .contact {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        .contact-form-card {
+            background: var(--pink-pale);
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid var(--pink-border);
+        }
+
+        .contact-form-card h3 {
+            font-size: 1.3rem;
+            color: var(--pink-dark);
+            margin-bottom: 8px;
+        }
+
+        .contact-form-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .input-group label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--pink-dark);
+        }
+
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+            padding: 11px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--pink-border);
+            background: #ffffff;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            border-color: var(--pink-mid);
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .contact-info-side {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: var(--pink-pale);
+            border-radius: 12px;
+            padding: 22px;
+            border: 1px solid var(--pink-border);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .info-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            color: var(--pink-dark);
+        }
+
+        .info-content p,
+        .info-content a {
+            font-size: 0.88rem;
+            color: #64748b;
+        }
+
+        .info-content a {
+            color: var(--pink-mid);
+            font-weight: 600;
+        }
+
+        .hours-list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .hours-row span:last-child {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 5px;
+        }
+
+        .social-link {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-link.instagram {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #ffffff;
+        }
+
+        .social-link.facebook {
+            background: #1877f2;
+            color: #ffffff;
+        }
+
+        .social-link.tiktok {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+
+        /* =========================================
+           BOOKING CTA SECTION
+        ========================================= */
+
+        .booking-cta {
             padding: 80px 0;
             background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
             color: #ffffff;
             text-align: center;
         }
 
-        .booking h2 {
+        .booking-cta h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.4rem;
             margin-bottom: 15px;
         }
 
-        .booking p {
+        .booking-cta p {
             color: #fbcfe8;
             font-size: 1rem;
             max-width: 500px;
             margin: 0 auto 35px;
         }
 
-        .booking-buttons {
+        .booking-cta-buttons {
             display: flex;
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .hours-grid {
-            display: inline-grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .hour-item {
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 10px;
-            padding: 14px 20px;
-            text-align: center;
-        }
-
-        .hour-item .day {
-            font-size: 0.8rem;
-            color: #fbcfe8;
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .hour-item .time {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #ffffff;
         }
 
         /* =========================================
@@ -714,16 +1090,71 @@
 
         .footer {
             background: #1e0a14;
-            padding: 25px 0;
-            text-align: center;
+            padding: 40px 0 25px;
         }
 
-        .footer p {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand .footer-logo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #ffffff;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            font-size: 0.88rem;
             color: #64748b;
-            font-size: 0.85rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
         }
 
-        .footer a {
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #64748b;
+            font-size: 0.88rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #f9a8d4;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.82rem;
+            color: #475569;
+        }
+
+        .footer-bottom a {
             color: #f9a8d4;
         }
 
@@ -731,31 +1162,25 @@
            MOBILE RESPONSIVE
         ========================================= */
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+
+            .nav-links-row { display: none; }
 
             .hero-inner {
                 flex-direction: column;
                 text-align: center;
             }
 
-            .hero h1 {
-                font-size: 2.2rem;
-            }
+            .hero h1 { font-size: 2.2rem; }
 
-            .hero-buttons {
-                justify-content: center;
-            }
+            .hero-buttons { justify-content: center; }
 
-            .hero-trust {
-                justify-content: center;
-            }
+            .hero-trust { justify-content: center; }
 
-            .hero-sub {
-                margin: 0 auto 30px;
-            }
+            .hero-sub { margin: 0 auto 30px; }
 
-            .hero-gallery-side {
-                max-width: 100%;
+            .hero-booking-card {
+                flex: unset;
                 width: 100%;
             }
 
@@ -769,10 +1194,17 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .hours-grid {
+            .contact-grid {
                 grid-template-columns: 1fr;
-                width: 100%;
-                max-width: 300px;
+            }
+
+            .input-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
             }
 
             .top-bar-inner {
@@ -782,6 +1214,10 @@
             .nav-cta-group .btn-outline {
                 display: none;
             }
+
+            .reviews-summary {
+                gap: 20px;
+            }
         }
 
     </style>
@@ -789,28 +1225,47 @@
 
 <body>
 
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment."
+       class="float-whatsapp"
+       target="_blank"
+       title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <!-- Portfolio Banner -->
     <div class="portfolio-banner">
         <p>
             This is a demo site built by BusinessDev SA.
             <a href="../../index.html">← Back to Portfolio</a>
+            <span class="standard-badge-banner">
+                <i class="fa-solid fa-circle-check"></i>
+                Standard Package Example — R3,500
+            </span>
         </p>
     </div>
 
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container top-bar-inner">
-            <div class="top-bar-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>074 000 0000</span>
+            <div style="display:flex; gap:20px; flex-wrap:wrap;">
+                <div class="top-bar-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>074 000 0000</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Tue–Sat: 8am–6pm | Sun: 9am–3pm</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Johannesburg South</span>
+                </div>
             </div>
-            <div class="top-bar-item">
-                <i class="fa-solid fa-clock"></i>
-                <span>Tue–Sat: 8am – 6pm | Sun: 9am – 3pm</span>
-            </div>
-            <div class="top-bar-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Johannesburg South</span>
+            <div class="top-bar-social">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </div>
     </div>
@@ -824,15 +1279,22 @@
                 </div>
                 <div class="logo-text">
                     <span class="name">Nandi's Hair Studio</span>
-                    <span class="tagline">Professional Hair Care</span>
+                    <span class="tagline">Professional Hair Care — Johannesburg South</span>
                 </div>
+            </div>
+            <div class="nav-links-row">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="nav-cta-group">
                 <a href="tel:0740000000" class="btn btn-outline">
                     <i class="fa-solid fa-phone"></i>
                     Call Us
                 </a>
-                <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment." 
+                <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment."
                    class="btn btn-whatsapp"
                    target="_blank">
                     <i class="fa-brands fa-whatsapp"></i>
@@ -843,7 +1305,7 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container hero-inner">
             <div class="hero-text">
                 <div class="hero-badge">
@@ -851,16 +1313,16 @@
                     Johannesburg South's Favourite Hair Studio
                 </div>
                 <h1>
-                    Look and Feel
-                    <span>Absolutely Beautiful</span>
+                    Look Your Best.
+                    <span>Feel Incredible.</span>
                 </h1>
                 <p class="hero-sub">
                     Professional braids, relaxers, treatments and styling.
-                    We take care of your hair the way it deserves to be treated —
+                    We care for your hair the way it deserves —
                     with skill, love and attention to detail.
                 </p>
                 <div class="hero-buttons">
-                    <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment." 
+                    <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment."
                        class="btn btn-whatsapp"
                        target="_blank">
                         <i class="fa-brands fa-whatsapp"></i>
@@ -886,24 +1348,47 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-gallery-side">
-                <div class="gallery-placeholder">
-                    <i class="fa-solid fa-image"></i>
-                    <span>Box Braids</span>
-                </div>
-                <div class="gallery-placeholder">
-                    <i class="fa-solid fa-image"></i>
-                    <span>Knotless Braids</span>
-                </div>
-                <div class="gallery-placeholder">
-                    <i class="fa-solid fa-image"></i>
-                    <span>Relaxer Treatment</span>
-                </div>
-                <div class="gallery-placeholder">
-                    <i class="fa-solid fa-image"></i>
-                    <span>Styling</span>
-                </div>
+
+            <!-- Booking Card in Hero -->
+            <div class="hero-booking-card">
+                <p class="booking-card-title">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Quick Booking Request
+                </p>
+                <form class="booking-form"
+                      onsubmit="handleBooking(event)">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text"
+                               placeholder="e.g. Thandi Dlamini"
+                               required />
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel"
+                               placeholder="e.g. 073 456 7890"
+                               required />
+                    </div>
+                    <div class="form-group">
+                        <label>Service Needed</label>
+                        <select required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option>Box Braids</option>
+                            <option>Knotless Braids</option>
+                            <option>Relaxer</option>
+                            <option>Deep Conditioning</option>
+                            <option>Blow-dry & Styling</option>
+                            <option>Colour & Highlights</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Send Booking Request
+                    </button>
+                </form>
             </div>
+
         </div>
     </section>
 
@@ -915,6 +1400,7 @@
             <p class="section-sub">
                 From braids to relaxers, treatments to styling —
                 we do it all with skill and care.
+                Every client leaves looking and feeling amazing.
             </p>
             <div class="services-grid">
                 <div class="service-card">
@@ -937,8 +1423,8 @@
                     <div class="service-card-icon">
                         <i class="fa-solid fa-droplet"></i>
                     </div>
-                    <h3>Deep Conditioning Treatments</h3>
-                    <p>Restore moisture, strength and shine to your hair with our professional conditioning treatments.</p>
+                    <h3>Deep Conditioning</h3>
+                    <p>Restore moisture, strength and shine with our professional conditioning treatments.</p>
                     <span class="service-price">From R180</span>
                 </div>
                 <div class="service-card">
@@ -954,7 +1440,7 @@
                         <i class="fa-solid fa-scissors"></i>
                     </div>
                     <h3>Cuts & Trims</h3>
-                    <p>Shape up your style with a professional cut or trim tailored to your face shape and preferences.</p>
+                    <p>Shape up your style with a professional cut or trim tailored to your face shape.</p>
                     <span class="service-price">From R120</span>
                 </div>
                 <div class="service-card">
@@ -962,9 +1448,17 @@
                         <i class="fa-solid fa-palette"></i>
                     </div>
                     <h3>Colour & Highlights</h3>
-                    <p>Transform your look with professional colour, highlights or balayage done with protective care.</p>
+                    <p>Transform your look with professional colour, highlights or balayage done with care.</p>
                     <span class="service-price">From R450</span>
                 </div>
+            </div>
+            <div class="services-cta">
+                <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment."
+                   class="btn btn-primary"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Book Any Service on WhatsApp
+                </a>
             </div>
         </div>
     </section>
@@ -978,27 +1472,90 @@
                 Real results from real clients.
                 Your photos would appear here — showing off our best work.
             </p>
+            <div class="gallery-filter">
+                <button class="filter-btn active">All Work</button>
+                <button class="filter-btn">Braids</button>
+                <button class="filter-btn">Relaxers</button>
+                <button class="filter-btn">Colour</button>
+                <button class="filter-btn">Styling</button>
+            </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <i class="fa-solid fa-image"></i>
-                    <span>Client photo would appear here</span>
+                    <div class="gallery-item-inner">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Box Braids</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <i class="fa-solid fa-image"></i>
-                    <span>Client photo would appear here</span>
+                    <div class="gallery-item-inner">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Knotless Braids</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <i class="fa-solid fa-image"></i>
-                    <span>Client photo would appear here</span>
+                    <div class="gallery-item-inner">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Relaxer Result</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <i class="fa-solid fa-image"></i>
-                    <span>Client photo would appear here</span>
+                    <div class="gallery-item-inner">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Colour Treatment</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Cornrows</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Blow-dry & Style</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Highlights</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Senegalese Twists</span>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
                 </div>
             </div>
             <p class="gallery-note">
                 <i class="fa-solid fa-circle-info"></i>
-                Real client photos would be added here — showing braids, styling, colour and more.
+                Real client photos are added here — showing the full range of services.
             </p>
         </div>
     </section>
@@ -1010,7 +1567,7 @@
             <h2 class="section-title">Loved by Our <span>Clients</span></h2>
             <p class="section-sub">
                 Don't just take our word for it.
-                Here is what our happy clients have to say.
+                Here is what our happy clients say about us.
             </p>
             <div class="reviews-grid">
                 <div class="review-card">
@@ -1062,7 +1619,7 @@
                         <i class="fa-solid fa-star"></i>
                     </div>
                     <p class="review-text">
-                        "I came in for a treatment and colour and I left feeling like a new person.
+                        "I came in for a treatment and colour and left feeling like a new person.
                         Nandi really knows her stuff. My hair has never looked better!"
                     </p>
                     <div class="review-author">
@@ -1074,6 +1631,31 @@
                     </div>
                 </div>
             </div>
+            <div class="reviews-summary">
+                <div class="summary-item">
+                    <span class="big-number">4.9</span>
+                    <div class="big-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>Average Rating</p>
+                </div>
+                <div class="summary-item">
+                    <span class="big-number">120+</span>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="summary-item">
+                    <span class="big-number">8+</span>
+                    <p>Years Experience</p>
+                </div>
+                <div class="summary-item">
+                    <span class="big-number">100%</span>
+                    <p>Would Recommend</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1081,7 +1663,7 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-label">Pricing</div>
-            <h2 class="section-title">Clear, <span>Honest Prices</span></h2>
+            <h2 class="section-title">Clear <span>Honest Prices</span></h2>
             <p class="section-sub">
                 No surprises. No hidden costs.
                 Here is what you can expect to pay for our most popular services.
@@ -1130,20 +1712,171 @@
                     </ul>
                 </div>
             </div>
+            <div class="pricing-cta">
+                <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20get%20a%20quote."
+                   class="btn btn-primary"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Get a Quote on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-label">Get In Touch</div>
+            <h2 class="section-title">Book Your <span>Appointment</span></h2>
+            <p class="section-sub">
+                Fill in the form and we will get back to you to confirm your booking.
+                Or just WhatsApp us directly — it's the fastest way.
+            </p>
+            <div class="contact-grid">
+
+                <!-- Contact Form -->
+                <div class="contact-form-card">
+                    <h3>Send Us a Message</h3>
+                    <p>We'll get back to you within a few hours to confirm your appointment.</p>
+                    <form class="contact-form"
+                          onsubmit="handleContact(event)">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>First Name</label>
+                                <input type="text"
+                                       placeholder="Thandi"
+                                       required />
+                            </div>
+                            <div class="input-group">
+                                <label>Last Name</label>
+                                <input type="text"
+                                       placeholder="Dlamini"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel"
+                                   placeholder="073 456 7890"
+                                   required />
+                        </div>
+                        <div class="input-group">
+                            <label>Service Required</label>
+                            <select required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option>Box Braids</option>
+                                <option>Knotless Braids</option>
+                                <option>Relaxer</option>
+                                <option>Deep Conditioning</option>
+                                <option>Blow-dry & Styling</option>
+                                <option>Colour & Highlights</option>
+                                <option>Other / Not Sure</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Preferred Day & Time</label>
+                            <input type="text"
+                                   placeholder="e.g. Saturday morning" />
+                        </div>
+                        <div class="input-group">
+                            <label>Any Other Details</label>
+                            <textarea placeholder="e.g. hair length, specific style you want..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Send Booking Request
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-side">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>WhatsApp (Fastest)</h4>
+                            <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book."
+                               target="_blank">
+                                074 000 0000
+                            </a>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Our Location</h4>
+                            <p>45 Main Road, Johannesburg South<br />Gauteng, South Africa</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Opening Hours</h4>
+                            <div class="hours-list">
+                                <div class="hours-row">
+                                    <span>Tuesday – Friday</span>
+                                    <span>8am – 6pm</span>
+                                </div>
+                                <div class="hours-row">
+                                    <span>Saturday</span>
+                                    <span>8am – 5pm</span>
+                                </div>
+                                <div class="hours-row">
+                                    <span>Sunday</span>
+                                    <span>9am – 3pm</span>
+                                </div>
+                                <div class="hours-row">
+                                    <span>Monday</span>
+                                    <span>Closed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Follow Our Work</h4>
+                            <p style="margin-bottom:10px;">
+                                See daily posts of our work on social media
+                            </p>
+                            <div class="social-links">
+                                <a href="#" class="social-link instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link tiktok">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <!-- Booking CTA -->
-    <section class="booking" id="contact">
+    <section class="booking-cta">
         <div class="container">
-            <h2>Ready to Book Your Appointment?</h2>
+            <h2>Ready to Book?</h2>
             <p>
                 The easiest way to book is on WhatsApp.
-                Send us a message, tell us what you need,
-                and we will sort out a time that works for you.
+                Send us a message and we will confirm
+                a time that works perfectly for you.
             </p>
-            <div class="booking-buttons">
-                <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment." 
+            <div class="booking-cta-buttons">
+                <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment."
                    class="btn btn-whatsapp"
                    target="_blank">
                     <i class="fa-brands fa-whatsapp"></i>
@@ -1154,33 +1887,102 @@
                     Call 074 000 0000
                 </a>
             </div>
-            <div class="hours-grid">
-                <div class="hour-item">
-                    <span class="day">Tuesday – Friday</span>
-                    <span class="time">8am – 6pm</span>
-                </div>
-                <div class="hour-item">
-                    <span class="day">Saturday</span>
-                    <span class="time">8am – 5pm</span>
-                </div>
-                <div class="hour-item">
-                    <span class="day">Sunday</span>
-                    <span class="time">9am – 3pm</span>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>
-                © 2025 Nandi's Hair Studio — Johannesburg South |
-                <a href="tel:0740000000">074 000 0000</a> |
-                Demo site built by <a href="../../index.html">BusinessDev SA</a>
-            </p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="footer-logo-name">Nandi's Hair Studio</span>
+                    <p>
+                        Professional hair care in Johannesburg South.
+                        Braids, relaxers, treatments and styling — done with
+                        skill, love and attention to detail.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link tiktok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#gallery"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="#reviews"><i class="fa-solid fa-chevron-right"></i> Reviews</a></li>
+                        <li><a href="#pricing"><i class="fa-solid fa-chevron-right"></i> Pricing</a></li>
+                        <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>
+                            <a href="tel:0740000000">
+                                <i class="fa-solid fa-phone"></i>
+                                074 000 0000
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/27740000000" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                WhatsApp Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-location-dot"></i>
+                                Johannesburg South
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    © 2025 Nandi's Hair Studio — Johannesburg South |
+                    Demo site built by
+                    <a href="../../index.html">BusinessDev SA</a>
+                </p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        function handleBooking(e) {
+            e.preventDefault();
+            const name  = e.target.querySelector('input[type="text"]').value;
+            const phone = e.target.querySelector('input[type="tel"]').value;
+            const service = e.target.querySelector('select').value;
+            const msg = encodeURIComponent(
+                `Hi Nandi! I'd like to book an appointment.\n\nName: ${name}\nPhone: ${phone}\nService: ${service}`
+            );
+            window.open(`https://wa.me/27740000000?text=${msg}`, '_blank');
+        }
+
+        function handleContact(e) {
+            e.preventDefault();
+            const inputs  = e.target.querySelectorAll('input, select, textarea');
+            const name    = inputs[0].value + ' ' + inputs[1].value;
+            const phone   = inputs[2].value;
+            const service = inputs[3].value;
+            const day     = inputs[4].value;
+            const details = inputs[5].value;
+            const msg = encodeURIComponent(
+                `Hi Nandi! I'd like to book an appointment.\n\nName: ${name}\nPhone: ${phone}\nService: ${service}\nPreferred time: ${day}\nDetails: ${details}`
+            );
+            window.open(`https://wa.me/27740000000?text=${msg}`, '_blank');
+        }
+    </script>
 
 </body>
 </html>

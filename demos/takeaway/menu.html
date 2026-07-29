@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Flames Takeaway Full Menu — burgers, bunny chow, platters, Gatsby, sides and drinks. Order on WhatsApp." />
+    <title>Full Menu | Flames Takeaway</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="flames.css" />
+
+    <style>
+
+        /* Menu Page Specific */
+
+        .menu-section {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .menu-nav {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            position: sticky;
+            top: 72px;
+            background: #ffffff;
+            padding: 15px 0;
+            z-index: 10;
+            border-bottom: 1px solid var(--orange-border);
+        }
+
+        .menu-nav-btn {
+            padding: 9px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid var(--orange-border);
+            background: var(--orange-pale);
+            color: var(--orange-dark);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .menu-nav-btn:hover,
+        .menu-nav-btn.active {
+            background: var(--orange-mid);
+            color: #ffffff;
+            border-color: var(--orange-mid);
+        }
+
+        .menu-category-section {
+            margin-bottom: 60px;
+        }
+
+        .menu-category-heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--orange-border);
+        }
+
+        .menu-category-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange-mid));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .menu-category-heading h2 {
+            font-size: 1.4rem;
+            color: var(--orange-dark);
+        }
+
+        .menu-category-heading p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .menu-items-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .menu-item-card {
+            background: var(--orange-pale);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--orange-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-item-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124,45,18,0.08);
+        }
+
+        .menu-item-details { flex: 1; }
+
+        .menu-item-details h3 {
+            font-size: 0.95rem;
+            color: var(--orange-dark);
+            margin-bottom: 4px;
+        }
+
+        .menu-item-details p {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .menu-item-details .item-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .item-tag {
+            background: rgba(234,88,12,0.1);
+            color: var(--orange-mid);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 50px;
+        }
+
+        .menu-item-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .menu-item-price-tag {
+            font-weight: 800;
+            color: var(--orange-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.05rem;
+        }
+
+        .item-order-btn {
+            background: #25d366;
+            color: #ffffff;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+
+        .item-order-btn:hover {
+            background: #1ebe5d;
+        }
+
+        /* Specials Section */
+        .specials-section {
+            padding: 60px 0;
+            background: var(--orange-pale);
+        }
+
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .special-card {
+            background: linear-gradient(135deg, var(--orange-dark), var(--orange-mid));
+            border-radius: 14px;
+            padding: 25px;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-card::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 50%;
+        }
+
+        .special-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fed7aa;
+            margin-bottom: 8px;
+        }
+
+        .special-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .special-card p {
+            font-size: 0.85rem;
+            color: #fed7aa;
+            margin-bottom: 15px;
+        }
+
+        .special-price {
+            font-size: 1.6rem;
+            font-weight: 800;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .special-card .btn {
+            font-size: 0.85rem;
+            padding: 9px 18px;
+        }
+
+        /* Order CTA Banner */
+        .order-banner {
+            background: var(--orange-dark);
+            padding: 40px 0;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .order-banner h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .order-banner p {
+            color: #fed7aa;
+            margin-bottom: 25px;
+        }
+
+        .order-banner-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 900px) {
+
+            .menu-items-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .specials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-nav {
+                top: 60px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+       class="float-whatsapp"
+       target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div class="portfolio-banner">
+        <p>
+            Demo site by BusinessDev SA.
+            <a href="../../index.html">← Back to Portfolio</a>
+            <span class="premium-badge-banner">
+                <i class="fa-solid fa-crown"></i>
+                Premium Package — R6,000
+            </span>
+        </p>
+    </div>
+
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div style="display:flex; gap:20px; flex-wrap:wrap;">
+                <div class="top-bar-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>078 000 0000</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Mon–Sun: 10am – 10pm</span>
+                    <span class="open-badge">Open Now</span>
+                </div>
+            </div>
+            <div class="top-bar-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Khayelitsha, Cape Town</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="name">Flames Takeaway</span>
+                    <span class="tagline">Hot food. Fast service.</span>
+                </div>
+            </a>
+            <div class="nav-links-row">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link active">Full Menu</a>
+                <a href="about.html" class="nav-link">Our Story</a>
+                <a href="contact.html" class="nav-link">Find Us</a>
+            </div>
+            <div class="nav-cta-group">
+                <a href="tel:0780000000" class="btn btn-primary">
+                    <i class="fa-solid fa-phone"></i>
+                    Call to Order
+                </a>
+                <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+                   class="btn btn-whatsapp"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Order on WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <div class="container page-hero-inner">
+            <div>
+                <div class="breadcrumb" style="margin-bottom:12px;">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Full Menu</span>
+                </div>
+                <h1>Our Full <span>Menu</span></h1>
+                <p>Everything made fresh. Order on WhatsApp and skip the queue.</p>
+            </div>
+            <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+               class="btn btn-whatsapp"
+               target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                Order Now on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Week Specials -->
+    <section class="specials-section">
+        <div class="container">
+            <div class="section-label">Limited Time</div>
+            <h2 class="section-title">This Week's <span>Specials</span></h2>
+            <p class="section-sub">Updated every week. Don't miss out!</p>
+            <div class="specials-grid">
+                <div class="special-card">
+                    <div class="special-label">🔥 Burger Special</div>
+                    <h3>2 Burgers + 2 Large Chips</h3>
+                    <p>Two Flames Special Burgers and two large chips. Perfect for sharing.</p>
+                    <span class="special-price">R110</span>
+                    <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20the%202%20Burgers%20%2B%202%20Chips%20special%20for%20R110."
+                       class="btn btn-whatsapp"
+                       target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Order This Special
+                    </a>
+                </div>
+                <div class="special-card">
+                    <div class="special-label">🍗 Family Special</div>
+                    <h3>Family Platter 12 Pieces</h3>
+                    <p>12 pieces of chicken, large chips and two dipping sauces. Feeds the whole family.</p>
+                    <span class="special-price">R220</span>
+                    <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20the%20Family%20Platter%2012pc%20special%20for%20R220."
+                       class="btn btn-whatsapp"
+                       target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Order This Special
+                    </a>
+                </div>
+                <div class="special-card">
+                    <div class="special-label">🌯 Combo Deal</div>
+                    <h3>Gatsby + Cold Drink</h3>
+                    <p>Large Gatsby with your choice of filling, plus any 330ml cold drink.</p>
+                    <span class="special-price">R105</span>
+                    <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20the%20Gatsby%20%2B%20Cold%20Drink%20special%20for%20R105."
+                       class="btn btn-whatsapp"
+                       target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Order This Special
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Menu -->
+    <section class="menu-section">
+        <div class="container">
+
+            <!-- Menu Nav -->
+            <div class="menu-nav">
+                <a href="#burgers" class="menu-nav-btn active">
+                    <i class="fa-solid fa-burger"></i> Burgers
+                </a>
+                <a href="#bunny" class="menu-nav-btn">
+                    <i class="fa-solid fa-bowl-food"></i> Bunny Chow
+                </a>
+                <a href="#platters" class="menu-nav-btn">
+                    <i class="fa-solid fa-drumstick-bite"></i> Platters
+                </a>
+                <a href="#gatsby" class="menu-nav-btn">
+                    <i class="fa-solid fa-plate-wheat"></i> Gatsby
+                </a>
+                <a href="#sides" class="menu-nav-btn">
+                    <i class="fa-solid fa-french-fries"></i> Sides
+                </a>
+                <a href="#drinks" class="menu-nav-btn">
+                    <i class="fa-solid fa-bottle-water"></i> Drinks
+                </a>
+            </div>
+
+            <!-- Burgers -->
+            <div class="menu-category-section" id="burgers">
+                <div class="menu-category-heading">
+                    <div class="menu-category-icon">
+                        <i class="fa-solid fa-burger"></i>
+                    </div>
+                    <div>
+                        <h2>Burgers</h2>
+                        <p>All burgers served on a fresh toasted bun</p>
+                    </div>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Flames Special Burger</h3>
+                            <p>Double beef patty, double cheese, special house sauce, lettuce, tomato, pickles</p>
+                            <div class="item-tags">
+                                <span class="item-tag">🔥 Best Seller</span>
+                                <span class="item-tag">Double Patty</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R65</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Flames%20Special%20Burger."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Classic Beef Burger</h3>
+                            <p>Single beef patty, cheese, lettuce, tomato, onion, tomato sauce</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R45</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Classic%20Beef%20Burger."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Crispy Chicken Burger</h3>
+                            <p>Crispy fried chicken fillet, coleslaw, pickles, mayo on a sesame bun</p>
+                            <div class="item-tags">
+                                <span class="item-tag">Crispy</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R55</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Crispy%20Chicken%20Burger."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Cheese & Jalapeño Burger</h3>
+                            <p>Double beef patty, double cheese, jalapeños, BBQ sauce, crispy onions</p>
+                            <div class="item-tags">
+                                <span class="item-tag">🌶️ Spicy</span>
+                                <span class="item-tag">Double Patty</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R75</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Cheese%20%26%20Jalapeno%20Burger."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Veggie Burger</h3>
+                            <p>Flame-grilled veggie patty, cheese, lettuce, tomato, special sauce</p>
+                            <div class="item-tags">
+                                <span class="item-tag">🌱 Vegetarian</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R50</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Veggie%20Burger."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Burger + Chips Combo</h3>
+                            <p>Any single patty burger with a large chips — better value together</p>
+                            <div class="item-tags">
+                                <span class="item-tag">💰 Best Value</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R65</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Burger%20%2B%20Chips%20Combo."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bunny Chow -->
+            <div class="menu-category-section" id="bunny">
+                <div class="menu-category-heading">
+                    <div class="menu-category-icon">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <div>
+                        <h2>Bunny Chow</h2>
+                        <p>Served in a fresh loaf of bread — full or half</p>
+                    </div>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Mutton Bunny — Full Loaf</h3>
+                            <p>Slow-cooked mutton curry, rich gravy, in a full loaf of bread</p>
+                            <div class="item-tags">
+                                <span class="item-tag">🔥 Most Popular</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R90</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Mutton%20Bunny%20Full%20Loaf."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Mutton Bunny — Half Loaf</h3>
+                            <p>Slow-cooked mutton curry, rich gravy, in half a loaf</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R55</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Mutton%20Bunny%20Half%20Loaf."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Chicken Bunny — Full Loaf</h3>
+                            <p>Flame-spiced chicken curry in a full loaf of bread</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R85</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Chicken%20Bunny%20Full%20Loaf."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Chicken Bunny — Half Loaf</h3>
+                            <p>Flame-spiced chicken curry in half a loaf</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R55</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Chicken%20Bunny%20Half%20Loaf."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Bean Bunny — Full Loaf</h3>
+                            <p>Spiced butter beans in a full loaf</p>
+                            <div class="item-tags">
+                                <span class="item-tag">🌱 Vegetarian</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R65</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Bean%20Bunny%20Full%20Loaf."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Bean Bunny — Half Loaf</h3>
+                            <p>Spiced butter beans in half a loaf</p>
+                            <div class="item-tags">
+                                <span class="item-tag">🌱 Vegetarian</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R38</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Bean%20Bunny%20Half%20Loaf."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platters -->
+            <div class="menu-category-section" id="platters">
+                <div class="menu-category-heading">
+                    <div class="menu-category-icon">
+                        <i class="fa-solid fa-drumstick-bite"></i>
+                    </div>
+                    <div>
+                        <h2>Chicken Platters</h2>
+                        <p>All platters served with chips and dipping sauce</p>
+                    </div>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>2 Piece Streetwise</h3>
+                            <p>2 pieces of chicken + small chips</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R55</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20the%202%20Piece%20Streetwise."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>6 Piece Platter</h3>
+                            <p>6 pieces of chicken + large chips + dipping sauce</p>
+                            <div class="item-tags">
+                                <span class="item-tag">🔥 Popular</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R120</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20the%206%20Piece%20Platter."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>12 Piece Family Platter</h3>
+                            <p>12 pieces of chicken + large chips + 2 dipping sauces</p>
+                            <div class="item-tags">
+                                <span class="item-tag">👨‍👩‍👧‍👦 Family Size</span>
+                                <span class="item-tag">💰 Best Value</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R220</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20the%2012%20Piece%20Family%20Platter."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Chicken Wings (8 pieces)</h3>
+                            <p>8 flame-spiced chicken wings + dipping sauce. Choose plain or spicy.</p>
+                            <div class="item-tags">
+                                <span class="item-tag">🌶️ Spicy Option</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R95</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%208%20Chicken%20Wings."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gatsby -->
+            <div class="menu-category-section" id="gatsby">
+                <div class="menu-category-heading">
+                    <div class="menu-category-icon">
+                        <i class="fa-solid fa-plate-wheat"></i>
+                    </div>
+                    <div>
+                        <h2>Gatsby</h2>
+                        <p>Cape Town classic — large roll loaded with chips, atchar and your filling</p>
+                    </div>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Chicken Gatsby (Large)</h3>
+                            <p>Large roll, chips, atchar, spiced chicken strips</p>
+                            <div class="item-tags">
+                                <span class="item-tag">🔥 Best Seller</span>
+                            </div>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R95</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20large%20Chicken%20Gatsby."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Polony Gatsby (Large)</h3>
+                            <p>Large roll, chips, atchar, fried polony slices</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R70</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20large%20Polony%20Gatsby."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Steak Gatsby (Large)</h3>
+                            <p>Large roll, chips, atchar, thinly sliced beef steak</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R110</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20large%20Steak%20Gatsby."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Half Gatsby (Any Filling)</h3>
+                            <p>Half roll with chips, atchar and your choice of filling</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">From R45</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20Half%20Gatsby."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sides -->
+            <div class="menu-category-section" id="sides">
+                <div class="menu-category-heading">
+                    <div class="menu-category-icon">
+                        <i class="fa-solid fa-french-fries"></i>
+                    </div>
+                    <div>
+                        <h2>Sides</h2>
+                        <p>Add something extra to your order</p>
+                    </div>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Chips — Large</h3>
+                            <p>Freshly cut chips, lightly salted</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R25</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20large%20chips."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Chips + Dipping Sauce</h3>
+                            <p>Large chips with your choice of sauce (tomato, garlic, peri-peri)</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R35</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20chips%20with%20dipping%20sauce."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Coleslaw</h3>
+                            <p>Creamy homemade coleslaw</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R18</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20coleslaw."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Pap & Sauce</h3>
+                            <p>Smooth pap with tomato and onion sauce</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R30</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20pap%20and%20sauce."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="menu-category-section" id="drinks">
+                <div class="menu-category-heading">
+                    <div class="menu-category-icon">
+                        <i class="fa-solid fa-bottle-water"></i>
+                    </div>
+                    <div>
+                        <h2>Cold Drinks</h2>
+                        <p>Ice cold and ready to go</p>
+                    </div>
+                </div>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Cold Drink — 330ml Can</h3>
+                            <p>Coke, Fanta Orange, Sprite, Cream Soda, Fanta Grape</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R18</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20cold%20drink."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Cold Drink — 1.5L Bottle</h3>
+                            <p>Coke, Fanta, Sprite — great for sharing</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R35</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%201.5L%20cold%20drink."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Bottled Water — 500ml</h3>
+                            <p>Still water</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R12</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20bottle%20of%20water."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-details">
+                            <h3>Juice Box</h3>
+                            <p>Apple, orange or guava juice box — great for the kids</p>
+                        </div>
+                        <div class="menu-item-right">
+                            <span class="menu-item-price-tag">R12</span>
+                            <a href="https://wa.me/27780000000?text=Hi!%20I%27d%20like%20a%20juice%20box."
+                               class="item-order-btn"
+                               target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Order Banner -->
+    <div class="order-banner">
+        <div class="container">
+            <h2>Ready to Order?</h2>
+            <p>WhatsApp us your order and we'll have it ready in 15–20 minutes.</p>
+            <div class="order-banner-btns">
+                <a href="https://wa.me/27780000000?text=Hi%20Flames!%20I%27d%20like%20to%20place%20an%20order."
+                   class="btn btn-whatsapp"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Order on WhatsApp
+                </a>
+                <a href="tel:0780000000" class="btn btn-outline">
+                    <i class="fa-solid fa-phone"></i>
+                    Call 078 000 0000
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                        </div>
+                        <span class="footer-logo-name">Flames Takeaway</span>
+                    </a>
+                    <p>Hot food, real flavour, served fast. Open 7 days a week.</p>
+                    <div class="footer-contact-list">
+                        <a href="tel:0780000000">
+                            <i class="fa-solid fa-phone"></i> 078 000 0000
+                        </a>
+                        <a href="https://wa.me/27780000000" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fa-solid fa-chevron-right"></i> Full Menu</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> Our Story</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Find Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#burgers"><i class="fa-solid fa-chevron-right"></i> Burgers</a></li>
+                        <li><a href="#bunny"><i class="fa-solid fa-chevron-right"></i> Bunny Chow</a></li>
+                        <li><a href="#platters"><i class="fa-solid fa-chevron-right"></i> Platters</a></li>
+                        <li><a href="#gatsby"><i class="fa-solid fa-chevron-right"></i> Gatsby</a></li>
+                        <li><a href="#sides"><i class="fa-solid fa-chevron-right"></i> Sides & Drinks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Opening Hours</h4>
+                    <div class="footer-hours">
+                        <div class="footer-hour-row">
+                            <span>Mon – Thu</span>
+                            <span>10am – 9pm</span>
+                        </div>
+                        <div class="footer-hour-row">
+                            <span>Fri – Sat</span>
+                            <span>10am – 11pm</span>
+                        </div>
+                        <div class="footer-hour-row">
+                            <span>Sunday</span>
+                            <span>11am – 8pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Flames Takeaway — Khayelitsha, Cape Town</p>
+                <p>Demo site built by <a href="../../index.html">BusinessDev SA</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
