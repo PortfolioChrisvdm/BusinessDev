@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nandi's Hair Studio — professional braids, relaxers, treatments and styling in Johannesburg South. Book your appointment on WhatsApp today." />
+    <title>Nandi's Hair Studio | Johannesburg South</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+
+        /* =========================================
+           RESET & BASE
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            background: #ffffff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================================
+           COLOUR VARIABLES
+        ========================================= */
+
+        :root {
+            --pink-dark:    #831843;
+            --pink-mid:     #be185d;
+            --pink-light:   #ec4899;
+            --pink-pale:    #fdf2f8;
+            --pink-border:  #fbcfe8;
+        }
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--pink-dark);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: #6d1639;
+            transform: scale(1.03);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: #ffffff;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1ebe5d;
+            transform: scale(1.03);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--pink-dark);
+            color: var(--pink-dark);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--pink-dark);
+            color: #ffffff;
+        }
+
+        .btn-light {
+            background: rgba(255,255,255,0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-light:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* =========================================
+           PORTFOLIO BANNER
+        ========================================= */
+
+        .portfolio-banner {
+            background: #be185d;
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        .portfolio-banner p {
+            color: #ffffff;
+            font-size: 0.85rem;
+        }
+
+        .portfolio-banner a {
+            color: #fbcfe8;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           TOP BAR
+        ========================================= */
+
+        .top-bar {
+            background: var(--pink-pale);
+            border-bottom: 1px solid var(--pink-border);
+            padding: 10px 0;
+        }
+
+        .top-bar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--pink-mid);
+            font-size: 0.85rem;
+        }
+
+        .top-bar-item i {
+            color: var(--pink-light);
+        }
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .navbar {
+            background: #ffffff;
+            padding: 18px 0;
+            border-bottom: 1px solid #f9a8d4;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(131,24,67,0.06);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .logo-text .name {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--pink-dark);
+            display: block;
+            line-height: 1.1;
+        }
+
+        .logo-text .tagline {
+            font-size: 0.75rem;
+            color: #be185d;
+        }
+
+        .nav-cta-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* =========================================
+           HERO SECTION
+        ========================================= */
+
+        .hero {
+            background: linear-gradient(135deg, var(--pink-dark) 0%, var(--pink-light) 100%);
+            padding: 90px 0;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            color: #ffffff;
+            padding: 7px 16px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 22px;
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #fbcfe8;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: #fbcfe8;
+            margin-bottom: 30px;
+            max-width: 480px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .hero-trust {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.88rem;
+            color: #fbcfe8;
+        }
+
+        /* Hero Gallery Side */
+        .hero-gallery-side {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            max-width: 380px;
+        }
+
+        .gallery-placeholder {
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 8px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.78rem;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .gallery-placeholder i {
+            font-size: 1.6rem;
+            opacity: 0.8;
+        }
+
+        .gallery-placeholder:nth-child(1) {
+            height: 140px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .gallery-placeholder:nth-child(2) {
+            height: 140px;
+            background: rgba(255,255,255,0.07);
+        }
+
+        .gallery-placeholder:nth-child(3) {
+            height: 110px;
+            background: rgba(255,255,255,0.07);
+        }
+
+        .gallery-placeholder:nth-child(4) {
+            height: 110px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* =========================================
+           SERVICES SECTION
+        ========================================= */
+
+        .services {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .section-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--pink-mid);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .section-title span {
+            color: var(--pink-mid);
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            background: var(--pink-pale);
+            border-radius: 14px;
+            padding: 28px;
+            border: 1px solid var(--pink-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(131,24,67,0.1);
+        }
+
+        .service-card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--pink-dark);
+        }
+
+        .service-card p {
+            font-size: 0.88rem;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+
+        .service-price {
+            font-weight: 700;
+            color: var(--pink-mid);
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           GALLERY SECTION
+        ========================================= */
+
+        .gallery {
+            padding: 80px 0;
+            background: var(--pink-pale);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 8px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 15px;
+            border: 1px solid var(--pink-border);
+        }
+
+        .gallery-item i {
+            font-size: 2rem;
+            opacity: 0.9;
+        }
+
+        .gallery-item:nth-child(1) { height: 200px; }
+        .gallery-item:nth-child(2) { height: 200px; background: linear-gradient(135deg, #6d1639, #be185d); }
+        .gallery-item:nth-child(3) { height: 200px; background: linear-gradient(135deg, #9d174d, #ec4899); }
+        .gallery-item:nth-child(4) { height: 200px; background: linear-gradient(135deg, #831843, #db2777); }
+
+        .gallery-note {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* =========================================
+           REVIEWS SECTION
+        ========================================= */
+
+        .reviews {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .review-card {
+            background: var(--pink-pale);
+            border-radius: 14px;
+            padding: 28px;
+            border: 1px solid var(--pink-border);
+        }
+
+        .review-stars {
+            color: #f59e0b;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            display: flex;
+            gap: 3px;
+        }
+
+        .review-text {
+            font-size: 0.92rem;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-style: italic;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .author-info .name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #1e293b;
+            display: block;
+        }
+
+        .author-info .detail {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* =========================================
+           PRICING SECTION
+        ========================================= */
+
+        .pricing {
+            padding: 80px 0;
+            background: var(--pink-pale);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .price-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 28px;
+            border: 1px solid var(--pink-border);
+        }
+
+        .price-card h3 {
+            font-size: 1.1rem;
+            color: var(--pink-dark);
+            margin-bottom: 5px;
+        }
+
+        .price-card .price-range {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--pink-mid);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .price-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .price-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            color: #475569;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--pink-border);
+        }
+
+        .price-list li:last-child {
+            border-bottom: none;
+        }
+
+        .price-list li span:last-child {
+            font-weight: 700;
+            color: var(--pink-dark);
+        }
+
+        /* =========================================
+           BOOKING SECTION
+        ========================================= */
+
+        .booking {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .booking h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+        }
+
+        .booking p {
+            color: #fbcfe8;
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto 35px;
+        }
+
+        .booking-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .hours-grid {
+            display: inline-grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .hour-item {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 14px 20px;
+            text-align: center;
+        }
+
+        .hour-item .day {
+            font-size: 0.8rem;
+            color: #fbcfe8;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .hour-item .time {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+            background: #1e0a14;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #f9a8d4;
+        }
+
+        /* =========================================
+           MOBILE RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 768px) {
+
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-trust {
+                justify-content: center;
+            }
+
+            .hero-sub {
+                margin: 0 auto 30px;
+            }
+
+            .hero-gallery-side {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .services-grid,
+            .reviews-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hours-grid {
+                grid-template-columns: 1fr;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .top-bar-inner {
+                justify-content: center;
+            }
+
+            .nav-cta-group .btn-outline {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Portfolio Banner -->
+    <div class="portfolio-banner">
+        <p>
+            This is a demo site built by BusinessDev SA.
+            <a href="../../index.html">← Back to Portfolio</a>
+        </p>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>074 000 0000</span>
+            </div>
+            <div class="top-bar-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Tue–Sat: 8am – 6pm | Sun: 9am – 3pm</span>
+            </div>
+            <div class="top-bar-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Johannesburg South</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="name">Nandi's Hair Studio</span>
+                    <span class="tagline">Professional Hair Care</span>
+                </div>
+            </div>
+            <div class="nav-cta-group">
+                <a href="tel:0740000000" class="btn btn-outline">
+                    <i class="fa-solid fa-phone"></i>
+                    Call Us
+                </a>
+                <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment." 
+                   class="btn btn-whatsapp"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Book Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-star"></i>
+                    Johannesburg South's Favourite Hair Studio
+                </div>
+                <h1>
+                    Look and Feel
+                    <span>Absolutely Beautiful</span>
+                </h1>
+                <p class="hero-sub">
+                    Professional braids, relaxers, treatments and styling.
+                    We take care of your hair the way it deserves to be treated —
+                    with skill, love and attention to detail.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment." 
+                       class="btn btn-whatsapp"
+                       target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Book on WhatsApp
+                    </a>
+                    <a href="tel:0740000000" class="btn btn-light">
+                        <i class="fa-solid fa-phone"></i>
+                        Call 074 000 0000
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>8+ years experience</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Quality products only</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Walk-ins welcome</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-gallery-side">
+                <div class="gallery-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Box Braids</span>
+                </div>
+                <div class="gallery-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Knotless Braids</span>
+                </div>
+                <div class="gallery-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Relaxer Treatment</span>
+                </div>
+                <div class="gallery-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Styling</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-label">What We Offer</div>
+            <h2 class="section-title">Our <span>Hair Services</span></h2>
+            <p class="section-sub">
+                From braids to relaxers, treatments to styling —
+                we do it all with skill and care.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-arrows-down-to-line"></i>
+                    </div>
+                    <h3>Braiding & Extensions</h3>
+                    <p>Box braids, knotless braids, cornrows, Senegalese twists and more. Done neatly and efficiently.</p>
+                    <span class="service-price">From R350</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <h3>Relaxers & Texturisers</h3>
+                    <p>Professional relaxer applications using quality products that protect your hair and scalp.</p>
+                    <span class="service-price">From R280</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3>Deep Conditioning Treatments</h3>
+                    <p>Restore moisture, strength and shine to your hair with our professional conditioning treatments.</p>
+                    <span class="service-price">From R180</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>Blow-Dry & Styling</h3>
+                    <p>Smooth blowouts, roller sets and special occasion styling that lasts and turns heads.</p>
+                    <span class="service-price">From R150</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h3>Cuts & Trims</h3>
+                    <p>Shape up your style with a professional cut or trim tailored to your face shape and preferences.</p>
+                    <span class="service-price">From R120</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3>Colour & Highlights</h3>
+                    <p>Transform your look with professional colour, highlights or balayage done with protective care.</p>
+                    <span class="service-price">From R450</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-label">Our Work</div>
+            <h2 class="section-title">See the <span>Results</span></h2>
+            <p class="section-sub">
+                Real results from real clients.
+                Your photos would appear here — showing off our best work.
+            </p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Client photo would appear here</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Client photo would appear here</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Client photo would appear here</span>
+                </div>
+                <div class="gallery-item">
+                    <i class="fa-solid fa-image"></i>
+                    <span>Client photo would appear here</span>
+                </div>
+            </div>
+            <p class="gallery-note">
+                <i class="fa-solid fa-circle-info"></i>
+                Real client photos would be added here — showing braids, styling, colour and more.
+            </p>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-label">What Clients Say</div>
+            <h2 class="section-title">Loved by Our <span>Clients</span></h2>
+            <p class="section-sub">
+                Don't just take our word for it.
+                Here is what our happy clients have to say.
+            </p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Nandi did my knotless braids and they came out absolutely beautiful!
+                        So neat and they lasted for weeks. I won't go anywhere else."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">T</div>
+                        <div class="author-info">
+                            <span class="name">Thandeka M.</span>
+                            <span class="detail">Knotless Braids Client</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Best relaxer I have ever had. My hair feels so healthy and looks amazing.
+                        The studio is clean and welcoming. Highly recommend!"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <span class="name">Palesa K.</span>
+                            <span class="detail">Relaxer Client</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "I came in for a treatment and colour and I left feeling like a new person.
+                        Nandi really knows her stuff. My hair has never looked better!"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">N</div>
+                        <div class="author-info">
+                            <span class="name">Nomsa D.</span>
+                            <span class="detail">Colour & Treatment Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-label">Pricing</div>
+            <h2 class="section-title">Clear, <span>Honest Prices</span></h2>
+            <p class="section-sub">
+                No surprises. No hidden costs.
+                Here is what you can expect to pay for our most popular services.
+            </p>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>
+                        <i class="fa-solid fa-arrows-down-to-line"></i>
+                        Braiding Services
+                    </h3>
+                    <span class="price-range">R350 – R800</span>
+                    <ul class="price-list">
+                        <li><span>Box Braids (small)</span><span>R700 – R800</span></li>
+                        <li><span>Box Braids (medium)</span><span>R500 – R650</span></li>
+                        <li><span>Knotless Braids</span><span>R600 – R750</span></li>
+                        <li><span>Cornrows (simple)</span><span>R150 – R250</span></li>
+                        <li><span>Senegalese Twists</span><span>R550 – R700</span></li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3>
+                        <i class="fa-solid fa-flask"></i>
+                        Treatments & Chemical
+                    </h3>
+                    <span class="price-range">R180 – R500</span>
+                    <ul class="price-list">
+                        <li><span>Relaxer (short)</span><span>R280 – R350</span></li>
+                        <li><span>Relaxer (long)</span><span>R380 – R450</span></li>
+                        <li><span>Deep Conditioning</span><span>R180 – R250</span></li>
+                        <li><span>Protein Treatment</span><span>R220 – R300</span></li>
+                        <li><span>Scalp Treatment</span><span>R150 – R200</span></li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        Styling & Finishing
+                    </h3>
+                    <span class="price-range">R120 – R500</span>
+                    <ul class="price-list">
+                        <li><span>Blow-dry & Style</span><span>R150 – R250</span></li>
+                        <li><span>Cut & Trim</span><span>R120 – R180</span></li>
+                        <li><span>Colour (full)</span><span>R450 – R600</span></li>
+                        <li><span>Highlights</span><span>R380 – R500</span></li>
+                        <li><span>Wash & Set</span><span>R150 – R200</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section class="booking" id="contact">
+        <div class="container">
+            <h2>Ready to Book Your Appointment?</h2>
+            <p>
+                The easiest way to book is on WhatsApp.
+                Send us a message, tell us what you need,
+                and we will sort out a time that works for you.
+            </p>
+            <div class="booking-buttons">
+                <a href="https://wa.me/27740000000?text=Hi%20Nandi!%20I%27d%20like%20to%20book%20an%20appointment." 
+                   class="btn btn-whatsapp"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Book on WhatsApp
+                </a>
+                <a href="tel:0740000000" class="btn btn-light">
+                    <i class="fa-solid fa-phone"></i>
+                    Call 074 000 0000
+                </a>
+            </div>
+            <div class="hours-grid">
+                <div class="hour-item">
+                    <span class="day">Tuesday – Friday</span>
+                    <span class="time">8am – 6pm</span>
+                </div>
+                <div class="hour-item">
+                    <span class="day">Saturday</span>
+                    <span class="time">8am – 5pm</span>
+                </div>
+                <div class="hour-item">
+                    <span class="day">Sunday</span>
+                    <span class="time">9am – 3pm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                © 2025 Nandi's Hair Studio — Johannesburg South |
+                <a href="tel:0740000000">074 000 0000</a> |
+                Demo site built by <a href="../../index.html">BusinessDev SA</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
