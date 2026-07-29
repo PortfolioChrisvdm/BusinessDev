@@ -1,4 +1,9 @@
 /* =========================================
+   BUSINESSDEV SA — FULL STYLESHEET
+   Version: 1.0
+========================================= */
+
+/* =========================================
    GLOBAL RESET
 ========================================= */
 
@@ -61,6 +66,7 @@ h1, h2, h3, h4 {
     margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 .highlight {
@@ -78,18 +84,21 @@ h1, h2, h3, h4 {
     padding: 12px 22px;
     border-radius: 8px;
     font-weight: 600;
+    font-size: 0.95rem;
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
+    border: none;
 }
 
 .btn-primary {
     background-color: #2563eb;
-    color: #fff;
+    color: #ffffff;
 }
 
 .btn-primary:hover {
     background-color: #1e40af;
+    transform: scale(1.03);
 }
 
 .btn-secondary {
@@ -104,20 +113,22 @@ h1, h2, h3, h4 {
 .btn-outline {
     border: 2px solid #2563eb;
     color: #2563eb;
+    background: transparent;
 }
 
 .btn-outline:hover {
     background-color: #2563eb;
-    color: #fff;
+    color: #ffffff;
 }
 
 .btn-whatsapp {
     background-color: #25d366;
-    color: white;
+    color: #ffffff;
 }
 
 .btn-whatsapp:hover {
     background-color: #1ebe5d;
+    transform: scale(1.03);
 }
 
 /* =========================================
@@ -137,12 +148,17 @@ h1, h2, h3, h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .nav-logo {
     font-weight: 800;
     font-size: 1.4rem;
     text-decoration: none;
+    z-index: 1001;
 }
 
 .logo-main {
@@ -155,14 +171,16 @@ h1, h2, h3, h4 {
 
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 25px;
 }
 
 .nav-link {
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.95rem;
     color: #475569;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 .nav-link:hover {
@@ -171,23 +189,106 @@ h1, h2, h3, h4 {
 
 .nav-cta {
     font-weight: 600;
-    color: #2563eb;
+    color: #2563eb !important;
 }
 
-/* Hamburger (hidden on desktop for now) */
 .hamburger {
     display: none;
     flex-direction: column;
-    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 1001;
+    padding: 5px;
 }
 
 .hamburger span {
+    display: block;
     width: 24px;
     height: 3px;
     background: #1e293b;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* =========================================
+   MOBILE MENU OPEN STATE
+========================================= */
+
+.nav-open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: -5%;
+    right: -5%;
+    background: #ffffff;
+    padding: 15px 5%;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    gap: 0;
+    z-index: 999;
+}
+
+.nav-open .nav-link {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 1rem;
+    color: #1e293b;
+}
+
+.nav-open .nav-cta {
+    margin-top: 12px;
+    background: #2563eb;
+    color: #ffffff !important;
+    padding: 13px 20px;
+    border-radius: 8px;
+    text-align: center;
+    border-bottom: none;
+}
+
+/* Hamburger X animation */
+.hamburger-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================
+   NAVBAR SCROLLED STATE
+========================================= */
+
+.navbar-scrolled {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   ACTIVE NAV LINK
+========================================= */
+
+.nav-active {
+    color: #2563eb !important;
+    font-weight: 700 !important;
+}
+
+/* =========================================
+   SECTIONS — GENERAL SPACING
+========================================= */
+
+section {
+    padding: 80px 0;
 }
 
 /* =========================================
@@ -195,7 +296,7 @@ h1, h2, h3, h4 {
 ========================================= */
 
 .hero {
-    padding: 80px 0;
+    padding: 80px 0 0;
     background: linear-gradient(to bottom, #f8fafc, #ffffff);
 }
 
@@ -209,49 +310,6 @@ h1, h2, h3, h4 {
 .hero-text {
     flex: 1;
 }
-
-.hero-headline {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-}
-
-.hero-subheadline {
-    font-size: 1.1rem;
-    color: #475569;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.hero-reassurance {
-    font-size: 0.9rem;
-    color: #64748b;
-}
-
-/* Simple mockup placeholder styling */
-
-.hero-image {
-    flex: 1;
-}
-
-.hero-mockup {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
-
-section {
-    padding: 80px 0;
-}
-
-/* =========================================
-   HERO BADGE
-========================================= */
 
 .hero-badge {
     display: inline-flex;
@@ -267,6 +325,26 @@ section {
     border: 1px solid #bfdbfe;
 }
 
+.hero-headline {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.hero-subheadline {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 30px;
+    max-width: 540px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
 .hero-reassurance {
     display: flex;
     align-items: center;
@@ -277,58 +355,19 @@ section {
 }
 
 /* =========================================
-   HERO STATS BAR
-========================================= */
-
-.hero-stats {
-    background: #1e293b;
-    padding: 30px 0;
-    margin-top: 60px;
-}
-
-.stats-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-
-.stat-number {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #ffffff;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-.stat-label {
-    font-size: 0.85rem;
-    color: #94a3b8;
-    text-align: center;
-}
-
-.stat-divider {
-    width: 1px;
-    height: 40px;
-    background: #334155;
-}
-
-/* =========================================
    HERO MOCKUP
 ========================================= */
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
 
 .hero-mockup {
     position: relative;
     width: 100%;
     max-width: 480px;
-    margin-left: auto;
 }
 
 .mockup-browser {
@@ -344,7 +383,7 @@ section {
     padding: 10px 15px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
     border-bottom: 1px solid #e2e8f0;
 }
 
@@ -354,9 +393,9 @@ section {
     border-radius: 50%;
 }
 
-.browser-dot.red { background: #ef4444; }
+.browser-dot.red    { background: #ef4444; }
 .browser-dot.yellow { background: #f59e0b; }
-.browser-dot.green { background: #22c55e; }
+.browser-dot.green  { background: #22c55e; }
 
 .browser-url {
     flex: 1;
@@ -393,9 +432,9 @@ section {
     border-radius: 4px;
 }
 
-.mockup-line.long { width: 100%; }
+.mockup-line.long   { width: 100%; }
 .mockup-line.medium { width: 70%; }
-.mockup-line.short { width: 45%; }
+.mockup-line.short  { width: 45%; }
 
 .mockup-cards {
     display: flex;
@@ -461,7 +500,7 @@ section {
     border-radius: 3px;
 }
 
-.phone-line.long { width: 100%; }
+.phone-line.long   { width: 100%; }
 .phone-line.medium { width: 65%; }
 
 .phone-cta {
@@ -469,6 +508,50 @@ section {
     background: #2563eb;
     border-radius: 4px;
     margin-top: 4px;
+}
+
+/* =========================================
+   HERO STATS BAR
+========================================= */
+
+.hero-stats {
+    background: #1e293b;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-align: center;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 40px;
+    background: #334155;
 }
 
 /* =========================================
@@ -775,13 +858,8 @@ section {
     margin-bottom: 4px;
 }
 
-.problem-label {
-    color: #ef4444;
-}
-
-.solution-label {
-    color: #22c55e;
-}
+.problem-label  { color: #ef4444; }
+.solution-label { color: #22c55e; }
 
 .portfolio-problem p,
 .portfolio-solution p {
@@ -898,7 +976,7 @@ section {
 
 .pricing-card.popular {
     border: 2px solid #2563eb;
-    box-shadow: 0 10px 40px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 10px 40px rgba(37,99,235,0.15);
 }
 
 .popular-badge {
@@ -926,20 +1004,9 @@ section {
     margin-bottom: 15px;
 }
 
-.starter-badge {
-    background: #f0fdf4;
-    color: #16a34a;
-}
-
-.standard-badge {
-    background: #eff6ff;
-    color: #2563eb;
-}
-
-.premium-badge {
-    background: #fefce8;
-    color: #ca8a04;
-}
+.starter-badge  { background: #f0fdf4; color: #16a34a; }
+.standard-badge { background: #eff6ff; color: #2563eb; }
+.premium-badge  { background: #fefce8; color: #ca8a04; }
 
 .pricing-price {
     display: flex;
@@ -1255,6 +1322,7 @@ section {
     line-height: 1.7;
     margin-top: 15px;
     max-width: 300px;
+    color: #94a3b8;
 }
 
 .footer-brand .logo-main {
@@ -1296,14 +1364,79 @@ section {
     padding: 20px 0;
     text-align: center;
     font-size: 0.85rem;
+    color: #475569;
 }
 
 /* =========================================
-   UPDATED MOBILE RESPONSIVE
+   SCROLL REVEAL ANIMATION
+========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   MOBILE RESPONSIVE — 900px AND BELOW
 ========================================= */
 
 @media (max-width: 900px) {
 
+    /* Show hamburger — hide desktop nav */
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex !important;
+    }
+
+    /* Hero */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-reassurance {
+        justify-content: center;
+    }
+
+    .hero-headline {
+        font-size: 2rem;
+    }
+
+    .hero-subheadline {
+        margin: 0 auto 30px;
+    }
+
+    .mockup-phone {
+        display: none;
+    }
+
+    .hero-mockup {
+        max-width: 100%;
+    }
+
+    /* Section headings */
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* All grids go single column */
     .problem-grid,
     .services-grid,
     .portfolio-grid,
@@ -1312,16 +1445,7 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .contact-grid {
-        grid-template-columns: 1fr;
-        max-width: 450px;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
+    /* Stats bar */
     .stats-container {
         gap: 20px;
     }
@@ -1330,6 +1454,7 @@ section {
         display: none;
     }
 
+    /* Maintenance card */
     .maintenance-card {
         flex-direction: column;
     }
@@ -1339,11 +1464,21 @@ section {
         justify-content: center;
     }
 
+    /* Contact */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .contact-reassurance {
         gap: 20px;
     }
 
-    .hero-mockup {
-        max-width: 100%;
+    /* Footer */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
