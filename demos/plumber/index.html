@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JT Plumbing and Maintenance — reliable, affordable plumber in Pretoria East. Available for burst pipes, geysers, blocked drains and more." />
+    <title>JT Plumbing & Maintenance | Pretoria East</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+
+        /* =========================================
+           RESET & BASE
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-call {
+            background: #1e3a5f;
+            color: #ffffff;
+        }
+
+        .btn-call:hover {
+            background: #162d4a;
+            transform: scale(1.03);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: #ffffff;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1ebe5d;
+            transform: scale(1.03);
+        }
+
+        .btn-outline {
+            border: 2px solid #1e3a5f;
+            color: #1e3a5f;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: #1e3a5f;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           TOP BAR
+        ========================================= */
+
+        .top-bar {
+            background: #1e3a5f;
+            padding: 10px 0;
+        }
+
+        .top-bar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #93c5fd;
+            font-size: 0.85rem;
+        }
+
+        .top-bar-item i {
+            color: #60a5fa;
+        }
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .navbar {
+            background: #ffffff;
+            padding: 18px 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: #1e3a5f;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .logo-text .name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #1e293b;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .logo-text .tagline {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .nav-cta-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            padding: 80px 0;
+            color: #ffffff;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            color: #ffffff;
+            padding: 7px 15px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #93c5fd;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: #bfdbfe;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .hero-trust {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.88rem;
+            color: #93c5fd;
+        }
+
+        .trust-item i {
+            color: #60a5fa;
+        }
+
+        .hero-image-side {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+            padding: 30px;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .hero-card h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .service-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #bfdbfe;
+            font-size: 0.92rem;
+        }
+
+        .service-list li i {
+            color: #60a5fa;
+            width: 16px;
+        }
+
+        /* =========================================
+           SERVICES SECTION
+        ========================================= */
+
+        .services {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .section-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #2563eb;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 28px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .service-card-icon {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3a5f;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            font-size: 0.88rem;
+            color: #64748b;
+        }
+
+        /* =========================================
+           WHY US SECTION
+        ========================================= */
+
+        .why-us {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            align-items: center;
+        }
+
+        .why-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .why-text h2 span {
+            color: #2563eb;
+        }
+
+        .why-text p {
+            color: #475569;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .why-points {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .why-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .point-icon {
+            width: 38px;
+            height: 38px;
+            background: #eff6ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3a5f;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .point-text h4 {
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .point-text p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .why-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-box {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .stat-box .number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1e3a5f;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: block;
+        }
+
+        .stat-box .label {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* =========================================
+           AREAS SECTION
+        ========================================= */
+
+        .areas {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .area-tag {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .area-tag i {
+            color: #2563eb;
+            font-size: 0.85rem;
+        }
+
+        /* =========================================
+           CONTACT SECTION
+        ========================================= */
+
+        .contact {
+            padding: 80px 0;
+            background: #1e3a5f;
+            color: #ffffff;
+        }
+
+        .contact .section-label {
+            color: #93c5fd;
+        }
+
+        .contact .section-title {
+            color: #ffffff;
+        }
+
+        .contact .section-sub {
+            color: #bfdbfe;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-bottom: 40px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+        }
+
+        .contact-card-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #93c5fd;
+            margin: 0 auto 15px;
+        }
+
+        .contact-card h3 {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .contact-card p {
+            font-size: 0.88rem;
+            color: #93c5fd;
+            margin-bottom: 18px;
+        }
+
+        .contact-card .btn {
+            width: 100%;
+            justify-content: center;
+            font-size: 0.88rem;
+        }
+
+        /* Map placeholder */
+        .map-placeholder {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            color: #93c5fd;
+        }
+
+        .map-placeholder i {
+            font-size: 2rem;
+        }
+
+        .map-placeholder p {
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+            background: #0f172a;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #475569;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #60a5fa;
+        }
+
+        /* =========================================
+           BACK TO PORTFOLIO BANNER
+        ========================================= */
+
+        .portfolio-banner {
+            background: #2563eb;
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        .portfolio-banner p {
+            color: #ffffff;
+            font-size: 0.85rem;
+        }
+
+        .portfolio-banner a {
+            color: #bfdbfe;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           MOBILE RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 768px) {
+
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-trust {
+                justify-content: center;
+            }
+
+            .hero-sub {
+                margin: 0 auto 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-cta-group .btn:first-child {
+                display: none;
+            }
+
+            .top-bar-inner {
+                justify-content: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Portfolio Banner -->
+    <div class="portfolio-banner">
+        <p>
+            This is a demo site built by BusinessDev SA.
+            <a href="../../index.html">← Back to Portfolio</a>
+        </p>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-bar-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>072 000 0000</span>
+            </div>
+            <div class="top-bar-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Mon–Sat: 7am – 6pm | Emergency: 24/7</span>
+            </div>
+            <div class="top-bar-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Pretoria East</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="name">JT Plumbing</span>
+                    <span class="tagline">& Maintenance</span>
+                </div>
+            </div>
+            <div class="nav-cta-group">
+                <a href="tel:0720000000" class="btn btn-outline">
+                    <i class="fa-solid fa-phone"></i>
+                    Call Now
+                </a>
+                <a href="https://wa.me/27720000000?text=Hi%20JT%20Plumbing!%20I%20need%20a%20plumber." 
+                   class="btn btn-whatsapp"
+                   target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Trusted Plumber — Pretoria East
+                </div>
+                <h1>
+                    Fast, Reliable Plumbing
+                    <span>When You Need It Most</span>
+                </h1>
+                <p class="hero-sub">
+                    Burst pipes, blocked drains, geyser repairs and more.
+                    Serving Pretoria East and surrounding areas.
+                    Available for emergencies 24/7.
+                </p>
+                <div class="hero-buttons">
+                    <a href="tel:0720000000" class="btn btn-call">
+                        <i class="fa-solid fa-phone"></i>
+                        Call 072 000 0000
+                    </a>
+                    <a href="https://wa.me/27720000000?text=Hi%20JT%20Plumbing!%20I%20need%20a%20plumber." 
+                       class="btn btn-whatsapp"
+                       target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        WhatsApp Us
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>No call-out fee</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Free quote</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>10+ years experience</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-side">
+                <div class="hero-card">
+                    <h3>
+                        <i class="fa-solid fa-list-check"></i>
+                        Our Services
+                    </h3>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Burst pipes & leak repairs</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Geyser installation & repairs</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Blocked drains & toilets</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Tap & shower repairs</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Bathroom renovations</li>
+                        <li><i class="fa-solid fa-circle-check"></i> General maintenance</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Emergency call-outs 24/7</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-label">What We Fix</div>
+            <h2 class="section-title">Our Plumbing Services</h2>
+            <p class="section-sub">
+                Whatever the plumbing problem — big or small —
+                we have the skills and tools to sort it out quickly and properly.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-droplet-slash"></i>
+                    </div>
+                    <h3>Burst Pipes & Leaks</h3>
+                    <p>Fast response to burst pipes and water leaks before they cause serious damage to your property.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-fire-flame-simple"></i>
+                    </div>
+                    <h3>Geyser Repairs & Installation</h3>
+                    <p>No hot water? We repair, replace, and install geysers quickly — including solar geysers.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-toilet"></i>
+                    </div>
+                    <h3>Blocked Drains & Toilets</h3>
+                    <p>Slow drains and blocked toilets sorted out fast. We use the right tools to clear any blockage.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-faucet"></i>
+                    </div>
+                    <h3>Tap & Shower Repairs</h3>
+                    <p>Dripping taps and broken showers waste water and money. We fix them properly the first time.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-bath"></i>
+                    </div>
+                    <h3>Bathroom Renovations</h3>
+                    <p>Planning a bathroom upgrade? We handle all the plumbing work for renovations big and small.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3>Emergency Call-Outs</h3>
+                    <p>Plumbing emergencies don't wait for business hours. We are available 24/7 for urgent jobs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us" id="about">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-text">
+                    <h2>Why Pretoria East <span>Trusts JT Plumbing</span></h2>
+                    <p>
+                        We are a local business, serving local families and businesses.
+                        We know the area, we know our customers, and we take pride in doing the job right.
+                    </p>
+                    <div class="why-points">
+                        <div class="why-point">
+                            <div class="point-icon">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div class="point-text">
+                                <h4>Fast Response Times</h4>
+                                <p>We aim to be on site within 60 minutes for emergencies in Pretoria East.</p>
+                            </div>
+                        </div>
+                        <div class="why-point">
+                            <div class="point-icon">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <div class="point-text">
+                                <h4>Honest, Upfront Pricing</h4>
+                                <p>We give you a clear quote before we start. No nasty surprises on the invoice.</p>
+                            </div>
+                        </div>
+                        <div class="why-point">
+                            <div class="point-icon">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="point-text">
+                                <h4>Quality Workmanship</h4>
+                                <p>We use quality parts and do the job properly so you don't have to call us back.</p>
+                            </div>
+                        </div>
+                        <div class="why-point">
+                            <div class="point-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="point-text">
+                                <h4>Guaranteed Work</h4>
+                                <p>All our work comes with a workmanship guarantee. We stand behind what we do.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-stats">
+                    <div class="stat-box">
+                        <span class="number">10+</span>
+                        <span class="label">Years Experience</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">500+</span>
+                        <span class="label">Jobs Completed</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">24/7</span>
+                        <span class="label">Emergency Service</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="number">100%</span>
+                        <span class="label">Satisfaction Focus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas We Cover -->
+    <section class="areas" id="areas">
+        <div class="container">
+            <div class="section-label">Coverage</div>
+            <h2 class="section-title">Areas We Serve</h2>
+            <p class="section-sub">
+                Based in Pretoria East — we cover these areas and more.
+                Not sure if we come to you? Give us a call and we will let you know.
+            </p>
+            <div class="areas-grid">
+                <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Faerie Glen</div>
+                <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Garsfontein</div>
+                <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Moreleta Park</div>
+                <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Silverton</div>
+                <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Menlo Park</div>
+                <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Lynnwood</div>
+                <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Wapadrand</div>
+                <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Grootfontein</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-label">Get In Touch</div>
+            <h2 class="section-title">Ready to Fix the Problem?</h2>
+            <p class="section-sub">
+                Don't wait for a small leak to become a big problem.
+                Get in touch now — we respond fast.
+            </p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Speak to us directly — fastest for emergencies</p>
+                    <a href="tel:0720000000" class="btn btn-call">
+                        <i class="fa-solid fa-phone"></i>
+                        072 000 0000
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Us</h3>
+                    <p>Send us a message and we will reply quickly</p>
+                    <a href="https://wa.me/27720000000?text=Hi%20JT%20Plumbing!%20I%20need%20a%20plumber." 
+                       class="btn btn-whatsapp"
+                       target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        WhatsApp Now
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3>Business Hours</h3>
+                    <p>Monday – Saturday: 7am to 6pm<br />Emergency call-outs: 24/7</p>
+                    <a href="tel:0720000000" class="btn btn-call">
+                        <i class="fa-solid fa-phone"></i>
+                        Call for Emergency
+                    </a>
+                </div>
+            </div>
+            <div class="map-placeholder">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <p>Pretoria East, Gauteng — Google Maps would be embedded here</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                © 2025 JT Plumbing & Maintenance — Pretoria East |
+                <a href="tel:0720000000">072 000 0000</a> |
+                Demo site built by <a href="../../index.html">BusinessDev SA</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
