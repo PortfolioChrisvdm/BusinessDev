@@ -1383,6 +1383,39 @@ section {
 }
 
 /* =========================================
+   PORTFOLIO TIER BADGES
+========================================= */
+
+.portfolio-tier {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.starter-tier {
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+
+.standard-tier {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+.premium-tier {
+    background: #fefce8;
+    color: #ca8a04;
+    border: 1px solid #fde68a;
+}
+
+/* =========================================
    MOBILE RESPONSIVE — 900px AND BELOW
 ========================================= */
 
