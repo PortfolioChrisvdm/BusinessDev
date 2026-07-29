@@ -1,0 +1,279 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.section-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    max-width: 700px;
+    color: #475569;
+    margin-bottom: 50px;
+}
+
+.highlight {
+    color: #2563eb;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #1e40af;
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #1e293b;
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+}
+
+.btn-outline {
+    border: 2px solid #2563eb;
+    color: #2563eb;
+}
+
+.btn-outline:hover {
+    background-color: #2563eb;
+    color: #fff;
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    padding: 18px 0;
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.logo-main {
+    color: #1e293b;
+}
+
+.logo-tag {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #475569;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+.nav-cta {
+    font-weight: 600;
+    color: #2563eb;
+}
+
+/* Hamburger (hidden on desktop for now) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 3px;
+    background: #1e293b;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    padding: 80px 0;
+    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-headline {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.hero-subheadline {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.hero-reassurance {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* Simple mockup placeholder styling */
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-mockup {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-headline {
+        font-size: 2rem;
+    }
+}
