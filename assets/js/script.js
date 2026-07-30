@@ -1,5 +1,5 @@
 /* =========================================
-   GetOnline ZA — MAIN JAVASCRIPT
+   SiteFix ZA — MAIN JAVASCRIPT
 ========================================= */
 
 document.addEventListener('DOMContentLoaded', function () {

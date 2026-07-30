@@ -1,4 +1,4 @@
-# GetOnline ZA — Portfolio Website
+# SiteFix ZA — Portfolio Website
 
 A client-facing portfolio website targeting small businesses 
 in South Africa that do not have websites yet.
@@ -11,7 +11,7 @@ Built by Chris van der Merwe.
 
 > Replace this link once hosted live
 
-[https://portfoliochrisvdm.github.io/GetOnlineZA/](#)
+[https://portfoliochrisvdm.github.io/SiteFixZA/](#)
 
 ---
 
@@ -51,6 +51,6 @@ Built by Chris van der Merwe.
 
 ## Contact
 
-- WhatsApp: +2764 688 0556
-- Email: chrisvdm@yahoo.com
-- GitHub:(https://github.com/PortfolioChrisvdm/GetOnlineZA)
+- WhatsApp: +27646880556
+- Email: sitefixza@gmail.com
+- GitHub:(https://github.com/PortfolioChrisvdm/SiteFixZA)
