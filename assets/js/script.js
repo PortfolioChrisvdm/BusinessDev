@@ -1,5 +1,5 @@
 /* =========================================
-   BUSINESSDEV SA — MAIN JAVASCRIPT
+   GetOnline ZA — MAIN JAVASCRIPT
 ========================================= */
 
 document.addEventListener('DOMContentLoaded', function () {

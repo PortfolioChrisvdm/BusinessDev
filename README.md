@@ -1,4 +1,4 @@
-# BusinessDev SA — Portfolio Website
+# GetOnline ZA — Portfolio Website
 
 A client-facing portfolio website targeting small businesses 
 in South Africa that do not have websites yet.
@@ -11,7 +11,7 @@ Built by Chris van der Merwe.
 
 > Replace this link once hosted live
 
-[https://portfoliochrisvdm.github.io/BusinessDev/](#)
+[https://portfoliochrisvdm.github.io/GetOnlineZA/](#)
 
 ---
 
@@ -53,4 +53,4 @@ Built by Chris van der Merwe.
 
 - WhatsApp: +2764 688 0556
 - Email: chrisvdm@yahoo.com
-- GitHub: github.com/PortfolioChrisvdm
+- GitHub:(https://github.com/PortfolioChrisvdm/GetOnlineZA)
