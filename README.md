@@ -51,6 +51,6 @@ Built by Chris van der Merwe.
 
 ## Contact
 
-- WhatsApp: +27646880556
+- WhatsApp: +27772046826
 - Email: sitefixza@gmail.com
 - GitHub:(https://github.com/PortfolioChrisvdm/SiteFixZA)
